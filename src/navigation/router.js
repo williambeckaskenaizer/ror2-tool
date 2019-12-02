@@ -24,6 +24,7 @@ const routes = {
   "/challenges": () => <Challenges />,
   "/abilities": () => <Abilities />,
   "/npcs": () => <Npcs />
+
 };
 
 export default routes;

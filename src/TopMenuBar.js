@@ -8,6 +8,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import TableMenu from './TableDrawer.js'
 
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1, 
@@ -72,7 +73,6 @@ function SearchAppBar(){
     <div className = {classes.root}>
       <AppBar position = "static">
         <Toolbar>
-        <TableMenu />
           <Typography className={classes.title} variant="h6" noWrap>
             RoR2 Tool
           </Typography>

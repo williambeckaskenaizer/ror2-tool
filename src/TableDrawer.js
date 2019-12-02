@@ -1,38 +1,81 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { navigate } from 'hookrouter'
+import { navigate, useRoutes } from 'hookrouter'
+import routes from './navigation/router'
 
 
-const useStyles = makeStyles({
-  list: {
-    width: 250,
+const drawerWidth = 240;
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
   },
-  fullList: {
-    width: 'auto',
+  appBar: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
   },
-});
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  toolbar: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(3),
+  },
+}));
 
-
-export default function TemporaryDrawer() {
+function PermanentDrawerLeft() {
+  const routeResult = useRoutes(routes);
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    left: false,
-  });
 
-  const toggleDrawer = (side, open) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-
-    setState({ ...state, [side]: open });
-  };
-
-
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" noWrap>
+            RoR2 Tool
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        className={classes.drawer}
+        variant="permanent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        anchor="left"
+      >
+        <div className={classes.toolbar} />
+        <Divider />
+        <List>
+        {['Home','Characters', 'Items', 'Environments', 'Enemies', 'Logs', 'Bosses', 'Chests', 'Challenges', 'Abilities', 'NPCs'].map((text, index) => (
+        <ListItem button key={text} onClick={() => handler(text)}>
+          <ListItemText primary={text} />
+        </ListItem>
+      ))}
+      </List>
+      </Drawer>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        {routeResult}
+      </main>
+    </div>
+  );
+}
 
   function handler(text) {
     switch (text){
@@ -63,38 +106,11 @@ export default function TemporaryDrawer() {
     }
   }
 
-  const sideList = side => (
-    <div
-      className={classes.list}
-      role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
-    <List>
-      {['Home','Characters', 'Items', 'Environments', 'Enemies', 'Logs', 'Bosses', 'Chests', 'Challenges', 'Abilities', 'NPCs'].map((text, index) => (
-        <ListItem button key={text} onClick={() => handler(text)}>
-          <ListItemText primary={text} />
-        </ListItem>
-      ))}
-      </List>
-    </div>
-  );
-
-  return (
-    <div>
-      <Button onClick={toggleDrawer('left', true)}>Choose Table</Button>
-      <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
-        {sideList('left')}
-      </Drawer>
-    </div>
-  );
-}
-
-
-
-
-// {['Characters', 'Items', 'Environments', 'Enemies', 'Logs','Bosses', 'Chests', 'Challenges', 'Abilities', 'NPCs'].map((text, index) => (
-//   <ListItem button key={text}>
-//     <ListItemText primary={text} />
-//   </ListItem>
-// ))}
+export default PermanentDrawerLeft;
+  // <List>
+  //     {['Home','Characters', 'Items', 'Environments', 'Enemies', 'Logs', 'Bosses', 'Chests', 'Challenges', 'Abilities', 'NPCs'].map((text, index) => (
+  //       <ListItem button key={text} onClick={() => handler(text)}>
+  //         <ListItemText primary={text} />
+  //       </ListItem>
+  //     ))}
+  //     </List>
