@@ -6,6 +6,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import { TextField } from '@material-ui/core';
+
 
 const useStyles = makeStyles({
     root: {
@@ -22,6 +24,9 @@ function createData(Name, Survivor, Desc, Proc){
 //        console.log('here!')
     return { Name, Survivor, Desc, Proc };
 }
+function searchHandler(searchText){
+  console.log(searchText)
+}
 
 const rows = [
     createData("Double Tap", "Commando", "Shoot twice for 2x90% damage", 1),
@@ -32,6 +37,19 @@ const rows = [
       const classes = useStyles();
 
       return (
+        <div>
+          <main>
+        <TextField
+          id="search"
+          style={{ margin: 1 , width: 600}}
+          placeholder="Search..."
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => searchHandler(e.target.value)}
+        />
+        </main>
         <Paper className={classes.root}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
@@ -54,5 +72,7 @@ const rows = [
             </TableBody>
           </Table>
         </Paper>
+        
+        </div>
       );
   }

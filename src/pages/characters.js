@@ -6,6 +6,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import { TextField } from '@material-ui/core'
 
 const useStyles = makeStyles({
     root: {
@@ -18,10 +19,17 @@ const useStyles = makeStyles({
   });
 
 function createData(name, primary, secondary, tactical, ult){
+  //const classes = useStyles();
 //    componentDidMount() {
 //        console.log('here!')
     return { name, primary, secondary, tactical, ult };
 }
+
+function handleClick(event){
+  console.log("cwicked!")
+}
+
+
 
 const rows = [
     createData("Commando", "Double Tap", "Phase Round", "Tactical Dive", "Suppressive Fire"),
@@ -32,8 +40,19 @@ const rows = [
       const classes = useStyles();
 
       return (
-
-        
+        <div>
+          <main>
+            <h1>Characters</h1>
+          <TextField
+            id="search"
+            style={{ margin: 1 , width: 600}}
+            placeholder="Search..."
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+        </main>
         <Paper className={classes.root}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
@@ -47,8 +66,8 @@ const rows = [
             </TableHead>
             <TableBody>
               {rows.map(row => (
-                <TableRow key={row.name}>
-                  <TableCell align="left">{row.name}</TableCell>
+                <TableRow key={row.name} hover>
+                  <TableCell align="left" onClick={(e) => handleClick(e)}>{row.name}</TableCell>
                   <TableCell align="left">{row.primary}</TableCell>
                   <TableCell align="left">{row.secondary}</TableCell>
                   <TableCell align="left">{row.tactical}</TableCell>
@@ -58,5 +77,6 @@ const rows = [
             </TableBody>
           </Table>
         </Paper>
+        </div>
       );
   }

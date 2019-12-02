@@ -10,7 +10,6 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { navigate, useRoutes } from 'hookrouter'
-import { TextField } from '@material-ui/core';
 import routes from './navigation/router'
 
 
@@ -74,20 +73,12 @@ function PermanentDrawerLeft() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <div className={classes.toolbar} />
-        <TextField
-          id="search"
-          style={{ margin: 1 , width: 600}}
-          placeholder="Search..."
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
         {routeResult}
       </main>
     </div>
   );
 }
+  
 
   function handler(text) {
     switch (text){

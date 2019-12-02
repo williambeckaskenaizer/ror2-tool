@@ -10,6 +10,7 @@ import Logs from '../pages/logs'
 import Challenges from '../pages/challenges';
 import Abilities from '../pages/abilities'
 import Npcs from '../pages/npcs'
+import EnhancedTable from '../pages/epictable'
 
 const routes = {
   "/": () => <HomePage />,
@@ -23,7 +24,8 @@ const routes = {
   "/chests": () => <Chests />,
   "/challenges": () => <Challenges />,
   "/abilities": () => <Abilities />,
-  "/npcs": () => <Npcs />
+  "/npcs": () => <Npcs />,
+  "/epic":() => <EnhancedTable />
 
 };
 
