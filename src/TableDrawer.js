@@ -35,10 +35,6 @@ export default function TemporaryDrawer() {
 
 
   function handler(text) {
-    if (text === 'Characters') {
-      //con
-      navigate("/characters", true)
-    }
     switch (text){
       case 'Home' : navigate("/home", true)
       break;
@@ -62,7 +58,7 @@ export default function TemporaryDrawer() {
       break;
       case 'NPCs' : navigate("/npcs")
       break;
-      default : navigate("/home", true)
+      default : navigate("/", true)
       break;
     }
   }
