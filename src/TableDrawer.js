@@ -15,7 +15,7 @@ import routes from './navigation/router'
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
-  
+
   root: {
     display: 'flex',
   },
@@ -35,6 +35,9 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
+  },
+  activeItem: {
+    backgroundColor: theme.palette.primary[100]
   },
 }));
 
@@ -81,6 +84,7 @@ function PermanentDrawerLeft() {
   
 
   function handler(text) {
+  
     switch (text){
       case 'Home' : navigate("/home", true)
       break;
@@ -110,12 +114,5 @@ function PermanentDrawerLeft() {
   }
 
 export default PermanentDrawerLeft;
-  // <List>
-  //     {['Home','Characters', 'Items', 'Environments', 'Enemies', 'Logs', 'Bosses', 'Chests', 'Challenges', 'Abilities', 'NPCs'].map((text, index) => (
-  //       <ListItem button key={text} onClick={() => handler(text)}>
-  //         <ListItemText primary={text} />
-  //       </ListItem>
-  //     ))}
-  //     </List>
 
   
