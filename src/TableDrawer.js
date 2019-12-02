@@ -10,13 +10,15 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { navigate, useRoutes } from 'hookrouter'
+import SearchIcon from '@material-ui/icons/Search';
+import { TextField } from '@material-ui/core';
 import routes from './navigation/router'
 
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
+    flexGrow: 1,
   },
   appBar: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -34,6 +36,9 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
+  },
+  inputRoot: {
+    color: 'inherit',
   },
 }));
 
@@ -71,6 +76,9 @@ function PermanentDrawerLeft() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
+        <div>
+        <TextField id="search" label="Search..." variant ="filled" width="300px"/>
+            </div>
         {routeResult}
       </main>
     </div>
