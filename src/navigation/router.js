@@ -9,6 +9,7 @@ import Enemies from '../pages/enemies'
 import Logs from '../pages/logs'
 import Challenges from '../pages/challenges';
 import Abilities from '../pages/abilities'
+import Npcs from '../pages/npcs'
 
 const routes = {
   "/": () => <HomePage />,
@@ -21,7 +22,8 @@ const routes = {
   "/bosses": () => <Bosses />,
   "/chests": () => <Chests />,
   "/challenges": () => <Challenges />,
-  "/abilities": () => <Abilities />
+  "/abilities": () => <Abilities />,
+  "/npcs": () => <Npcs />
 };
 
 export default routes;
