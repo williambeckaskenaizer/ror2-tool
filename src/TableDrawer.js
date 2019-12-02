@@ -3,12 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import { navigate } from 'hookrouter'
+
 
 const useStyles = makeStyles({
   list: {
@@ -19,13 +17,11 @@ const useStyles = makeStyles({
   },
 });
 
+
 export default function TemporaryDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    top: false,
     left: false,
-    bottom: false,
-    right: false,
   });
 
   const toggleDrawer = (side, open) => event => {
@@ -36,6 +32,41 @@ export default function TemporaryDrawer() {
     setState({ ...state, [side]: open });
   };
 
+
+
+  function handler(text) {
+    if (text === 'Characters') {
+      //con
+      navigate("/characters", true)
+    }
+    switch (text){
+      case 'Home' : navigate("/home", true)
+      break;
+      case 'Characters': navigate("/characters", true) 
+      break;
+      case 'Items' : navigate("/items", true)
+      break;
+      case 'Environments': navigate("/environments")
+      break;
+      case 'Enemies' : navigate("/enemies", true)
+      break;
+      case 'Logs' : navigate("/logs")
+      break;
+      case 'Bosses': navigate("/bosses", true)
+      break;
+      case 'Chests' : navigate("/chests", true)
+      break;
+      case 'Challenges' : navigate("/challenges", true)
+      break;
+      case 'Abilities' : navigate("/abilities", true)
+      break;
+      case 'NPCs' : navigate("/npcs")
+      break;
+      default : navigate("/home", true)
+      break;
+    }
+  }
+
   const sideList = side => (
     <div
       className={classes.list}
@@ -43,39 +74,12 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <List>
-        {['Characters', 'Items', 'Environments', 'Enemies', 'Logs','Bosses', 'Chests', 'Challenges', 'Abilities', 'NPCs'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
-
-  const fullList = side => (
-    <div
-      className={classes.fullList}
-      role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+    <List>
+      {['Home','Characters', 'Items', 'Environments', 'Enemies', 'Logs', 'Bosses', 'Chests', 'Challenges', 'Abilities', 'NPCs'].map((text, index) => (
+        <ListItem button key={text} onClick={() => handler(text)}>
+          <ListItemText primary={text} />
+        </ListItem>
+      ))}
       </List>
     </div>
   );
@@ -89,3 +93,12 @@ export default function TemporaryDrawer() {
     </div>
   );
 }
+
+
+
+
+// {['Characters', 'Items', 'Environments', 'Enemies', 'Logs','Bosses', 'Chests', 'Challenges', 'Abilities', 'NPCs'].map((text, index) => (
+//   <ListItem button key={text}>
+//     <ListItemText primary={text} />
+//   </ListItem>
+// ))}
