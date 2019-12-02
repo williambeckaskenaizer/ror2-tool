@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-export default function Environments(){
+export default class Environments extends Component{
+    render(){
        return (
         <div>
             <p>
@@ -12,4 +13,5 @@ export default function Environments(){
             <h1>goodbye</h1>
         </div>
        );
+    }
 }

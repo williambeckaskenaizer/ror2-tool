@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-export default class Bosses extends Component{
-  render(){
+export default class Abilities extends Component {
+   render() {
        return (
         <div>
             <p>
-                like a baws
+                to test my abilities
             </p>
         </div>
        );
-  }
+   }
 }
