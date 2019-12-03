@@ -2,9 +2,6 @@ import React from 'react';
 import { navigate } from 'hookrouter'
 import MUIDataTable from "mui-datatables";
 
-
-
-
   const options = {
     filterType: "none",
     responsive: "scrollMaxHeight",

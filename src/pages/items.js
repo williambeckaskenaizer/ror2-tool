@@ -12,7 +12,6 @@ import MUIDataTable from "mui-datatables";
     download: false,
     print: false,
     renderExpandableRow: (e) => handleClick(e),
-    expandableRows: true,
     rowHover: false
   }
 
