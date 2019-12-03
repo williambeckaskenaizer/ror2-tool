@@ -25,8 +25,8 @@ import MUIDataTable from "mui-datatables";
     );
 }
 
-function createData(name, primary, secondary, tactical, ult){
-    return [ name, primary, secondary, tactical, ult ];
+function createData(name, sequence, description){
+    return [ name, sequence, description ];
 }
 
 function handleClick(event){
@@ -41,10 +41,10 @@ function handleClick(event){
 }
 
 const rows = [
-    createData("Commando", "Double Tap", "Phase Round", "Tactical Dive", "Suppressive Fire"),
-    createData("Huntress", "Strafe", "Laser Glaive", "Blink", "Arrow Rain"),
+    createData("Distant Roost", "First", "Spires of earth jut through the fog and unknown avian creatures circle far peaks guarding their broods"),
+    createData("Abandoned Aqueduct", "Second", "An arid, sprawling desert located on Providence"),
   ];
 
 const columns = [
-  "Surivior","Primary","Secondary","Tacticool","Ultimate"
+  "Name","Sequence","Description"
 ];
