@@ -28,8 +28,8 @@ import MUIDataTable from "mui-datatables";
     );
 }
 
-function createData(name, primary, secondary, tactical, ult){
-    return [ name, primary, secondary, tactical, ult ];
+function createData(challenge, description, unlocks){
+    return [ challenge, description, unlocks ];
 }
 
 function handleClick(event){
@@ -44,10 +44,10 @@ function handleClick(event){
 }
 
 const rows = [
-    createData("Commando", "Double Tap", "Phase Round", "Tactical Dive", "Suppressive Fire"),
-    createData("Huntress", "Strafe", "Laser Glaive", "Blink", "Arrow Rain"),
+    createData("Warrior", "Reach and complete the 3rd Teleporter event without dying", "The Huntress"),
+    createData("Verified", "Complete the first Teleporter event 5 times", "MUL-T"),
   ];
 
 const columns = [
-  "Surivior","Primary","Secondary","Tacticool","Ultimate"
+  "Challenge","Description","Unlocks"
 ];

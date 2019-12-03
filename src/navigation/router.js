@@ -6,12 +6,12 @@ import Bosses from '../pages/bosses'
 import Environments from '../pages/environments'
 import Chests from '../pages/chests'
 import Enemies from '../pages/enemies'
-import Logs from '../pages/logs'
 import Challenges from '../pages/challenges';
 import Abilities from '../pages/abilities'
 import Npcs from '../pages/npcs'
 import CommandoPage from '../pages/commandopage'
 import HuntressPage from '../pages/huntresspage';
+import StatTester from '../pages/stattester';
 
 const routes = {
   "/": () => <HomePage />,
@@ -20,14 +20,14 @@ const routes = {
   "/items": () => <Items />,
   "/environments": () => <Environments />,
   "/enemies": () => <Enemies />,
-  "/logs": () => <Logs />,
   "/bosses": () => <Bosses />,
   "/chests": () => <Chests />,
   "/challenges": () => <Challenges />,
   "/abilities": () => <Abilities />,
   "/npcs": () => <Npcs />,
   "/characters/commando":() => <CommandoPage />,
-  "/characters/huntress":() => <HuntressPage />
+  "/characters/huntress":() => <HuntressPage />,
+  "/stat_tester":() => <StatTester />
 
 };
 
