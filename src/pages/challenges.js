@@ -1,13 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { navigate } from 'hookrouter'
+import MUIDataTable from "mui-datatables";
 
-export default class Challenges extends Component {
-   render() {
-       return (
-        <div>
-            <p>
-                challenges :)
-            </p>
-        </div>
-       );
-   }
+
+
+
+  const options = {
+    filterType: "none",
+    responsive: "scrollMaxHeight",
+    selectableRows: "none",
+    download: false,
+    print: false,
+    renderExpandableRow: (e) => handleClick(e),
+    expandableRows: true,
+    rowHover: false
+  }
+
+  export default function Challenges(){
+
+    return (
+      <MUIDataTable hover
+        title={"Challenges"}
+        data={rows}
+        columns={columns}
+        options={options}
+      />
+    );
 }
+
+function createData(name, primary, secondary, tactical, ult){
+    return [ name, primary, secondary, tactical, ult ];
+}
+
+function handleClick(event){
+  console.log("clicked" + event)
+  switch(event[0]){
+    case 'Commando': navigate("/characters/commando", true)
+    break;
+    case 'Huntress': navigate("/characters/huntress", true)
+    break;
+    default: navigate("/characters",true)
+  }
+}
+
+const rows = [
+    createData("Commando", "Double Tap", "Phase Round", "Tactical Dive", "Suppressive Fire"),
+    createData("Huntress", "Strafe", "Laser Glaive", "Blink", "Arrow Rain"),
+  ];
+
+const columns = [
+  "Surivior","Primary","Secondary","Tacticool","Ultimate"
+];

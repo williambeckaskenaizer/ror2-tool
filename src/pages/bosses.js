@@ -1,60 +1,50 @@
 import React from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
+import { navigate } from 'hookrouter'
+import MUIDataTable from "mui-datatables";
 
-const useStyles = makeStyles({
-    root: {
-      width: '100%',
-      overflowX: 'auto',
-    },
-    table: {
-      minWidth: 650,
-    },
-  });
+  const options = {
+    filterType: "none",
+    responsive: "scrollMaxHeight",
+    selectableRows: "none",
+    download: false,
+    print: false,
+    renderExpandableRow: (e) => handleClick(e),
+    expandableRows: true,
+    rowHover: false
+  }
 
-function createData(Name, Health, Attack, Speed, Armor){
-//    componentDidMount() {
-//        console.log('here!')
-    return { Name, Health, Attack, Speed, Armor};
+  export default function Bosses(){
+
+    return (
+      <MUIDataTable hover
+        title={"Bosses"}
+        data={rows}
+        columns={columns}
+        options={options}
+      />
+    );
+}
+
+function createData(name, health, damage, speed, armor){
+    return [ name, health, damage, speed, armor ];
+}
+
+function handleClick(event){
+  console.log("clicked" + event)
+  switch(event[0]){
+    case 'Commando': navigate("/characters/commando", true)
+    break;
+    case 'Huntress': navigate("/characters/huntress", true)
+    break;
+    default: navigate("/characters",true)
+  }
 }
 
 const rows = [
-    createData("Beetle Queen", "2100 (+ 630 Per Level)", "25 ( + 5 Per Level)", 6, 20),
-    createData("Grovetender", "2800 ( + 840 Per Level)", "23 ( + 4.6 Per Level)", 10, 20)
-]
+    createData("Imp Overlord", "2800 (+840 per level)", "16 (+3.2 per level)", "13 m/s", "20"),
+    createData("Beetle Queen", "2100 (+630 per level)", "25(+5 per level)", "6 m/s", "20"),
+  ];
 
-  export default function AbilityTable(){
-      const classes = useStyles();
-
-      return (
-        <Paper className={classes.root}>
-          <Table className={classes.table} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="left">Boss</TableCell>
-                <TableCell align="left">Health</TableCell>
-                <TableCell align="left">Damage</TableCell>
-                <TableCell align="left">Speed</TableCell>
-                <TableCell align="left">Armor</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map(row => (
-                <TableRow key={row.name}>
-                  <TableCell align="left">{row.Name}</TableCell>
-                  <TableCell align="left">{row.Health}</TableCell>
-                  <TableCell align="left">{row.Attack}</TableCell>
-                  <TableCell align="left">{row.Speed}</TableCell>
-                  <TableCell align="left">{row.Armor}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Paper>
-      );
-  }
+const columns = [
+  "Name","Health","Damage","Speed","Armor"
+];
