@@ -4,7 +4,7 @@ import Items from '../pages/items'
 import HomePage from '../pages/home'
 import Bosses from '../pages/bosses'
 import Environments from '../pages/environments'
-import Chests from '../pages/chests'
+import ChestTable from '../pages/chests'
 import Enemies from '../pages/enemies'
 import Challenges from '../pages/challenges';
 import Abilities from '../pages/abilities'
@@ -21,7 +21,7 @@ const routes = {
   "/environments": () => <Environments />,
   "/enemies": () => <Enemies />,
   "/bosses": () => <Bosses />,
-  "/chests": () => <Chests />,
+  "/chests": () => <ChestTable />,
   "/challenges": () => <Challenges />,
   "/abilities": () => <Abilities />,
   "/npcs": () => <Npcs />,
