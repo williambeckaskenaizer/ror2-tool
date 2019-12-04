@@ -9,7 +9,6 @@ import MUIDataTable from "mui-datatables";
     download: false,
     print: false,
     renderExpandableRow: (e) => handleClick(e),
-    expandableRows: true,
     rowHover: false
   }
 
@@ -25,8 +24,8 @@ import MUIDataTable from "mui-datatables";
     );
 }
 
-function createData(name,contains,base_cost){
-    return [ name, contains, base_cost ];
+function createData(name ,type, common_chance, uncommon_chance, legendary_chance, base_cost){
+    return [ name ,type, common_chance, uncommon_chance, legendary_chance, base_cost ];
 }
 
 function handleClick(event){
@@ -41,10 +40,10 @@ function handleClick(event){
 }
 
 const rows = [
-    createData("Commando", "Double Tap", "Phase Round", "Tactical Dive", "Suppressive Fire"),
-    createData("Huntress", "Strafe", "Laser Glaive", "Blink", "Arrow Rain"),
+    createData("Chest", "White, Green, Red", "79.2%", "19.8%", "0.99%", "25g"),
+    createData("Large Chest", "Green, Red", "0%", "80%", "20%", "50g"),
   ];
 
 const columns = [
-  "Chest Name","Contains","Base Cost"
+  "Chest Name","Item type", "Common Chance", "Uncommon Chance", "Legendary Chance" ,"Base Cost"
 ];

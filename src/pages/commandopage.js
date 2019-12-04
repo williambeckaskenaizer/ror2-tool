@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     height: 140,
   },
   paper: {
-    textAlign:"left",
+    textAlign: "left",
     padding: theme.spacing(0.8),
     color: theme.palette.text.white,
     margin: 3
@@ -48,12 +48,12 @@ export default function MediaCard() {
   return (
     <div>
       <h1>The Commando</h1>
-    <Grid container spacing={1} >
-  <Grid container item xs={10} spacing={0} alignItems="center">
-    <FormRow />
-  </Grid>
-</Grid>
-  </div>
+      <Grid container spacing={1} >
+        <Grid container item xs={10} spacing={0} alignItems="center">
+          <FormRow />
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 

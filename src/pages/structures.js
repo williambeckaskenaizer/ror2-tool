@@ -2,6 +2,9 @@ import React from 'react';
 import { navigate } from 'hookrouter'
 import MUIDataTable from "mui-datatables";
 
+
+
+
   const options = {
     filterType: "none",
     responsive: "scrollMaxHeight",
@@ -12,11 +15,11 @@ import MUIDataTable from "mui-datatables";
     rowHover: false
   }
 
-  export default function Bosses(){
+  export default function Structures(){
 
     return (
       <MUIDataTable hover
-        title={"Bosses"}
+        title={"Structures"}
         data={rows}
         columns={columns}
         options={options}
@@ -24,8 +27,8 @@ import MUIDataTable from "mui-datatables";
     );
 }
 
-function createData(name, health, damage, speed, armor){
-    return [ name, health, damage, speed, armor ];
+function createData(name, effect, base_cost, location){
+    return [ name, effect, base_cost, location ];
 }
 
 function handleClick(event){
@@ -40,10 +43,10 @@ function handleClick(event){
 }
 
 const rows = [
-    createData("Imp Overlord", "2800 (+840 per level)", "16 (+3.2 per level)", "13 m/s", "20"),
-    createData("Beetle Queen", "2100 (+630 per level)", "25(+5 per level)", "6 m/s", "20"),
+    createData("Newt Altar", "Open a Blue Portal to the Bazaar Between Time upon defeating the Teleporter Boss", "1 Lunar Coin", "3 possible locations per Environment"),
+    createData("Teleporter", "Upon activation, begins charging and spawns a Teleporter Boss. Once complete, allows travel to next Environment", "N/A", "12 possible locations per environment"),
   ];
 
 const columns = [
-  "Name","Health","Damage","Speed","Armor"
+  "Name","Effect", "Base Cost", "Location"
 ];

@@ -12,6 +12,7 @@ import Npcs from '../pages/npcs'
 import CommandoPage from '../pages/commandopage'
 import HuntressPage from '../pages/huntresspage';
 import StatTester from '../pages/stattester';
+import Structures from '../pages/structures'
 
 const routes = {
   "/": () => <HomePage />,
@@ -27,7 +28,8 @@ const routes = {
   "/npcs": () => <Npcs />,
   "/characters/commando":() => <CommandoPage />,
   "/characters/huntress":() => <HuntressPage />,
-  "/stat_tester":() => <StatTester />
+  "/stat_tester":() => <StatTester />,
+  "/structures":() => <Structures />
 
 };
 

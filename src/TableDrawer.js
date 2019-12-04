@@ -66,7 +66,7 @@ function PermanentDrawerLeft() {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-        {['Home','Characters', 'Items', 'Environments', 'Enemies', 'Bosses', 'Chests', 'Challenges', 'NPCs', 'Stat Tester'].map((text, index) => (
+        {['Home','Characters', 'Items', 'Environments', 'Enemies', 'Bosses', 'Chests', 'Structures', 'Challenges', 'NPCs', 'Stat Tester'].map((text, index) => (
         <ListItem button key={text} onClick={() => handler(text)}>
           <ListItemText primary={text} />
         </ListItem>
@@ -105,6 +105,8 @@ function PermanentDrawerLeft() {
       case 'NPCs' : navigate("/npcs")
       break;
       case 'Stat Tester' : navigate("/stat_tester", true)
+      break;
+      case 'Structures' : navigate("/structures", true)
       break;
       default : navigate("/", true)
       break;

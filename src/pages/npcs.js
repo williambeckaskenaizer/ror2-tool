@@ -1,13 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { navigate } from 'hookrouter'
+import MUIDataTable from "mui-datatables";
 
-export default class Npcs extends Component {
-   render() {
-       return (
-        <div>
-            <p>
-                there are like 2 of these in the game lets be real
-            </p>
-        </div>
-       );
-   }
+
+
+
+  const options = {
+    filterType: "none",
+    responsive: "scrollMaxHeight",
+    selectableRows: "none",
+    download: false,
+    print: false,
+    renderExpandableRow: (e) => handleClick(e),
+    rowHover: false
+  }
+
+  export default function Challenges(){
+
+    return (
+      <MUIDataTable hover
+        title={"NPCs"}
+        data={rows}
+        columns={columns}
+        options={options}
+      />
+    );
 }
+
+function createData(name, location){
+    return [ name, location ];
+}
+
+function handleClick(event){
+  console.log("clicked" + event)
+  switch(event[0]){
+    default: navigate("/npcs",true)
+  }
+}
+
+const rows = [
+    createData("Hanging Skeleton", "Alter to N'Kuhana, Wetland Aspect"),
+    createData("Newt", "Bazaar Between Time"),
+  ];
+
+const columns = [
+  "Name", "Location"
+];
