@@ -144,32 +144,93 @@ Name
 """
 
 def get_chests():
-    chest_list = ["Barrel", "Equipment Barrel", "Cloaked Chest", "Chest", "Large Chest", "Legendary Chest", "Category Chest", "Lunar Pod", "Multishop Terminal", "Rusty Lockbox", "Timed Security Test"]
-    chest_gallery = requests.get("https://riskofrain2.fandom.com/wiki/Structures")
-    clean_chest_page = bs4.BeautifulSoup(chest_gallery.text, 'html.parser')
+    print("Getting Chests")
+    """
+    Scrapping this part. There are not enough chests or enough organized chest data to justify spending this much time
+    on a function of this nature. Hand entering/updating this data will be easier. 
+    """
+    # chest_list = ["Barrel", "Equipment Barrel", "Cloaked Chest", "Chest", "Large Chest", "Legendary Chest", "Category Chest", "Lunar Pod", "Multishop Terminal", "Rusty Lockbox", "Timed Security Test"]
+    # chest_gallery = requests.get("https://riskofrain2.fandom.com/wiki/Structures")
+    # clean_chest_page = bs4.BeautifulSoup(chest_gallery.text, 'html.parser')
 
-    for chest in chest_list:
-        print("looking for", chest)
-        chest_page = requests.get("https://riskofrain2.fandom.com/wiki/"+chest)
-        cleaned = bs4.BeautifulSoup(chest_page.text, 'html.parser')
+    with open('chests.csv', mode='w') as chest_file:
+        # "Chest Name","Item type, Common Chance, Uncommon Chance, Legendary Chance" ,"Base Cost"
+        chest_file.write("Barrel, Gold/XP, N/A, N/A, N/A, 0\n")
+        chest_file.write("Equipment Barrel, Equipment, N/A, N/A, N/A, 25\n")
+        chest_file.write("Cloaked Chest, Damage, Utility, Healing, White, Green, Red, 79.2, 19.8, 0.99, 0\n")
+        chest_file.write("Chest, Damage, Utility, Healing, White, Green, Red, 79.2, 19.8, 0.99, 25\n")
+        chest_file.write("Large Chest, Damage, Utility, Healing, Green, Red, 0, 80, 20, 50\n")
+        chest_file.write("Legendary Chest, Damage, Utility, Healing, Red, 0, 0, 100, 3200\n")
+        chest_file.write("Damage Chest, Damage, White, Green, Red, 79.2, 19.8, 0.99, 30\n")
+        chest_file.write("Utility Chest, Utility, White, Green, Red,  79.2, 19.8, 0.99, 30\n")
+        chest_file.write("Healing Chest, Healing, White, Green, Red, 79.2, 19.8, 0.99, 30\n")
+        chest_file.write("Lunar Pod, Lundar, Lunar, N/A, N/A, N/A, 1\n")
+        chest_file.write("Multishop Terminal, Damage, Utility, Healing, White, Green, Unknown, Unknown, Unkown, 30\n")
+        chest_file.write("Rusty Lockbox, Damage, Utility, Healing, White, Green, Red, Unknown, Unknown, Unkown, 0\n")
 
-        common_chance = ""
-        uncommon_chance = ""
-        legendary_chance = ""
+    print("Done.. teehee")
+            
+def get_bosses():
+    print("getting bosses")
+    boss_gallery = requests.get("https://riskofrain2.fandom.com/wiki/Monsters")
+    clean_boss_page = bs4.BeautifulSoup(boss_gallery.text, 'html.parser')
+    attr_list = ["health", "damage", "speed", "armor"]
 
-        search = cleaned.find("p")
-        search2 = search.find()
-        for i in search.stripped_strings:
-            print(i)
+    bosses = clean_boss_page.find("div", id="gallery-1")
+    boss_list = []
 
+    for boss in bosses.stripped_strings:
+        boss = re.sub(r"\s+", '_', boss)
+        boss_list.append(boss)
+        
+    stat_list = []
+    for boss in boss_list:
+        stat_list.append(boss+",")
+        for attr in attr_list:
 
+            mon_url = requests.get("https://riskofrain2.fandom.com/wiki/" + boss)
+            clean_mon_url = (bs4.BeautifulSoup(mon_url.text, 'html.parser'))
+            sub_for_mon = clean_mon_url.find("div", {"data-source": attr})
+            second_sub = sub_for_mon.find("div", {"class":"pi-data-value pi-font"})
+            for i in second_sub.stripped_strings:
+                if attr == "armor":
+                    stat_list.append(i+"\n")
+                else:
+                    stat_list.append(i+",")
+    with open('bosses.csv', mode='w') as boss_file:
+        boss_file.write("Name,Health,Damage,Speed,Armor\n")
+        for entry in stat_list:
+            boss_file.write(entry)
+    print("done")
+def get_environments():
+    print("Getting Environments")
+    """
+    it makes zero sense to scrape this from the web
+    """
+    # "Name","Sequence","Description"
+    with open('environments.csv', mode='w') as environment_file:
+        environment_file.write("Distant Roost, 1, Spires of earth jut through the fog and unknown avian creatures circle far peaks guarding their broods.\n")
+        environment_file.write("Titanic Plains, 1, Gigantic stone arches bracket the skyline, while the main play-field overlooks a vast fractured tectonic lowland\n")
+        environment_file.write("Wetland Aspect, 2, A moist mire that consists mostly of ruined stone structures and swampy areas filled with water.\n")
+        environment_file.write("Abandoned Aqueduct, 2, An arid, sprawling desert located on Providence\n")
+        environment_file.write("Rallypoint Delta, 3, Rallypoint Delta is a desolate tundra located on Providence\n")
+        environment_file.write("Scorched Acres, 3, Burned ruins, comprised of many floating circular islands, which are connected by bridges and Gas Vents.\n")
+        environment_file.write("Abyssal Depths, 4, This hellfire-forged zone is ocated within the crust of the planet.")
+        environment_file.write("Siren's Call, 4, A Ship Graveyard, featuring long-abandoned ancient technologies.\n")
+        environment_file.write("Bazaar Between Time, ???, Existing neither here nor there, this place is a hidden realm run by The Celestials.\n")
+        environment_file.write("A Moment, Fractured, ???, A Hidden Realm, with multiple floating islands in the void. The last island contains the Obelisk.\n")
+        environment_file.write("Gilded Coast, ???, A Hidden Realm featuring the boss Aurelionite.\n")
+    print("Done... teehee")
 
-
+def get_challenges():
+    print("Getting Challenges")
 
 
 def main():
-    # get_item_stats()
-    # get_enemies()
+    get_item_stats()
+    get_enemies()
     get_chests()
+    get_bosses()
+    get_environments()
 
 main()
