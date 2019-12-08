@@ -1,0 +1,16 @@
+Name,Health,Damage,Speed
+Alloy_Vulture,200 (+60 per level),15 (+3 per level),3 m/s
+Beetle,80 (+24 per level),12 (+2.4 per level),6 m/s
+Beetle_Guard,600 (+180 per level),12 (+2.4 per level),23.8 m/s
+Bighorn_Bison,600 (+180 per level),12 (+2.4 per level),3 m/s
+Brass_Contraption,300 (+90 per level),19 (+2 per level),10 m/s
+Clay_Templar,700 (+210 per level),16 (+3.2 per level),6 m/s
+Elder_Lemurian,900 (+270 per level),16 (+3.2 per level),13 m/s
+Greater_Wisp,750 (+225 per level),15 (+3 per level),7 m/s
+Hermit_Crab,100 (+45 per level),4 (+0.8 per level),10 m/s
+Imp,200 (+75 per level),10 (+2 per level),10 m/s
+Jellyfish,60 (+18 per level),5 (+1 per level),10 m/s
+Lemurian,80 (+24 per level),12 (+2.4 per level),7 m/s
+Lesser_Wisp,35 (+10.5 per level),4 (+0.8 per level),6 m/s
+Solus_Probe,220 (+66 per level),15 (+3 per level),10 m/s
+Stone_Golem,480 (+144 per level),20 (+4 per level),6.6 m/s

@@ -1,0 +1,14 @@
+Name,Rarity,Description,Category,Unlocked By
+Armor-Piercing_Rounds,Common,"Deal an additional 20% damage (+20% per stack) to bosses. ",Damage,Advancement
+Backup_Magazine,Common,"Add +1 (+1 per stack) charge of your Secondary skill . ",Utility,Flawless
+Bundle_of_Fireworks,Common,"Activating an interactable launches 8 (+4 per stack) fireworks that deal 300% base damage. ",Damage,...Maybe One More
+Bustling_Fungus,Common,"After standing still for 2 seconds, create a zone that heals for 4.5% (+2.25% per stack) of your health every second to all allies within 3m (+1.5m per stack) . ",Healing,Default
+Cautious_Slug,Common,"Increases passive health regeneration by 300% (+300% per stack) while outside of combat. ",Healing,Default
+Crowbar,Common,"Deal 150% (+50% per stack) damage to enemies above 90% health . ",Damage,The Basics
+Energy_Drink,Common,"Sprint speed is improved by 30% (+20% per stack) . ",Utility,Default
+Focus_Crystal,Common,"Increase damage to enemies within 13m by 15% (+15% per stack) . ",Damage,Default
+Gasoline,Common,"Killing an enemy ignites all enemies within 12m (+4m per stack) . Enemies burn for 150% (+75% per stack) base damage. ",Damage,Default
+Lens-Maker's_Glasses,Common,"Your attacks have a 10% (+10% per stack) chance to ' Critically Strike ', dealing double damage . ",Damage,Default
+Medkit,Common,"Heal for 10 (+10 per stack) health 1.1 seconds after getting hurt. ",Healing,Elite Slayer
+Monster_Tooth,Common,"Killing an enemy spawns a healing orb that heals for 8 (+8 per stack) health . ",Healing,Default
+Paul's_Goat_Hoof,

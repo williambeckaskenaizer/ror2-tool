@@ -1,132 +1,175 @@
-import requests, bs4, re, time
+import requests, bs4, re, time, csv
 
 """
-let's make a python scraper for https://riskofrain2.fandom.com/wiki/Risk_of_Rain_2_Wiki
+Welcome to the world's shoddiest web scraper :)
 
-info we need
+this was made to rip data from the ROR2 wikia,
+as it is currently the most complete source for
+info on Risk of Rain 2. 
 
-ITEMS:
+As I was unable to locate decent documentation for the api to return
+wikia pages as json objects (if it even still exists), 
+this script parses HTML for the data required.
+
+What terrifies me the most, is that it is entirely
+build around the current structure of the wiki.
+should that change at any time, all will be lost.
+
+- Will
+"""
+
+"""
+item list:
+
 item id
 name
 rarity
 description
 unlocked by
 category
-
-
 """
 
-def get_item_list(rarity):
+
+# def get_item_list(rarity):
+    
+
+def get_item_stats():
     #declare final item list this will return
     final_items = []
-
     # get html for page with list of items, clean it up
     items_page = requests.get("https://riskofrain2.fandom.com/wiki/Items")
     clean_items_page = bs4.BeautifulSoup(items_page.text, 'html.parser')
-
     #commons
+    rarity_count = 0
     for item in clean_items_page:
-
         #regex for finding item name
-        common_item_table = clean_items_page.select("table")[0]
+        item_table = clean_items_page.select("table")[rarity_count]
         item_r = re.compile(r'<td data-sort-value="(.*?)">')
-        items = item_r.findall(str(common_item_table))
-    for i in items:
-        i = re.sub(r"[\s]", '_', i)
-        final_items.append(i)
-            
+        items = item_r.findall(str(item_table))
+        rarity_count+=1
+        for i in items:
+            if rarity_count is not 4:
+                i = re.sub(r"[\s]", '_', i)
+                final_items.append(i)
+    print("getting items")
+    attrs = ["desc", "rarity", "category", "unlock"]
+    with open('items.csv', mode='w') as item_file:
+        item_file.write("Name,Rarity,Description,Category,Unlocked By\n")
+        for item in final_items:
+            item_file.write(item + ",")
+            item_page = requests.get('https://riskofrain2.fandom.com/wiki/' + item)
+            clean_item_page = bs4.BeautifulSoup(item_page.text, 'html.parser')
+            i_name =""
+            i_desc = ""
+            i_rarity = ""
+            i_cat = ""
+            i_unlock = ""
+            for attr in attrs:
+                item_attr = clean_item_page.find("div", {"data-source": attr})
+                if item_attr:
+                    ref_item_attr = item_attr.find("div", {"class": "pi-data-value pi-font"})
+                else:
+                    i_unlock="Default"
+                
+                if ref_item_attr:
+                    if attr == "desc":
+                        for i in ref_item_attr.stripped_strings:
+                            i_desc+=i+" "
+                    if attr == "rarity":
+                        for i in ref_item_attr.stripped_strings:
+                            i_rarity=i
+                    if attr == "category":
+                        for i in ref_item_attr.stripped_strings:
+                            i_cat=i
+                    if attr == "unlock":
+                        for i in ref_item_attr.stripped_strings:
+                            if i == "Damage" or i == "Healing" or i == "Utility":
+                                unlock="Default"
+                            else:
+                                i_unlock=i
+            item_file.write(i_rarity+ "," + "\"" +i_desc + "\"" +"," + i_cat + "," + i_unlock + "\n")
+    print("done")
 
-    return final_items
+"""
+
+enemy list time!
+we need:
+
+enemy name
+health
+damage
+speed
+
+"""
+
+def get_enemies():
+    print("getting enemies")
+    mon_gallery = requests.get("https://riskofrain2.fandom.com/wiki/Monsters")
+    clean_mon_page = bs4.BeautifulSoup(mon_gallery.text, 'html.parser')
+    attr_list = ["health", "damage", "speed"]
+
+    mons = clean_mon_page.find("div", id="gallery-0")
+    mon_list = []
+
+    for monster in mons.stripped_strings:
+        monster = re.sub(r"\s+", '_', monster)
+        mon_list.append(monster)
         
+    stat_list = []
+    for monster in mon_list:
+        stat_list.append(monster+",")
+        for attr in attr_list:
 
+            mon_url = requests.get("https://riskofrain2.fandom.com/wiki/" + monster)
+            clean_mon_url = (bs4.BeautifulSoup(mon_url.text, 'html.parser'))
+            sub_for_mon = clean_mon_url.find("div", {"data-source": attr})
+            second_sub = sub_for_mon.find("div", {"class":"pi-data-value pi-font"})
+            for i in second_sub.stripped_strings:
+                if attr == "speed":
+                    stat_list.append(i+"\n")
+                else:
+                    stat_list.append(i+",")
+    with open('enemies.csv', mode='w') as enemy_file:
+        enemy_file.write("Name,Health,Damage,Speed\n")
+        for entry in stat_list:
+            enemy_file.write(entry)
+    print("done")
 
-def get_item_stats(i_list):
-    for item in i_list:
-        print("for ", item, ":")
-        item_page = requests.get('https://riskofrain2.fandom.com/wiki/' + item)
-        clean_item_page = bs4.BeautifulSoup(item_page.text, 'html.parser')
-        item_rarity = re.compile(r'href="/wiki/Items#Common" title="Items">(.*?)<')
-        item_cat = re.compile(r'title="Category:(.*?)Items')
-        item_unlock = re.compile(r'"pi-data-value pi-font"><a href="/wiki/(.*?)"')
+"""
+CHESTS:
 
-        rarity = item_rarity.findall(str(clean_item_page))[0]
-        category = item_cat.findall(str(clean_item_page))[0]
+Name
+"Chest Name","Item type", "Common Chance", "Uncommon Chance", "Legendary Chance" ,"Base Cost"
 
-        if "Unlock" in clean_item_page.stripped_strings:
-            oof = item_unlock.findall(str(clean_item_page), re.DOTALL)[2]
-            unlock = re.sub("[^a-zA-Z\s_]", "", oof)
-        else:
-            unlock = "Default"
+"""
 
-        
-        print(rarity, category, unlock)
+def get_chests():
+    chest_list = ["Barrel", "Equipment Barrel", "Cloaked Chest", "Chest", "Large Chest", "Legendary Chest", "Category Chest", "Lunar Pod", "Multishop Terminal", "Rusty Lockbox", "Timed Security Test"]
+    chest_gallery = requests.get("https://riskofrain2.fandom.com/wiki/Structures")
+    clean_chest_page = bs4.BeautifulSoup(chest_gallery.text, 'html.parser')
 
-i_list = get_item_list("common")
-print(i_list)
-get_item_stats(i_list)
+    for chest in chest_list:
+        print("looking for", chest)
+        chest_page = requests.get("https://riskofrain2.fandom.com/wiki/"+chest)
+        cleaned = bs4.BeautifulSoup(chest_page.text, 'html.parser')
 
-# def get_items():
-#     page = requests.get("https://riskofrain2.fandom.com/wiki/Items")
-#     clean_page = bs4.BeautifulSoup(page.text, 'html.parser')
+        common_chance = ""
+        uncommon_chance = ""
+        legendary_chance = ""
 
-#     f = open("items.txt","a")
-
-#     for i in range(0,5):
-#         table = clean_page.select("table")[i]
-#         item_r = re.compile(r'<td data-sort-value=(.*?)>')
-#         cleanr = re.compile(r'<.*?>')
-#         cleantext = re.sub(cleanr, "", str(table))
-#         if i == 0:
-#             items = item_r.findall(str(table))
-#             f.write("\nCommon Items:"+cleantext)
-#         if i == 1:
-#             items = item_r.findall(str(table))
-#             f.write("\n\nUncommon:"+cleantext)
-#         if i == 2:
-#             items = item_r.findall(str(table))
-#             f.write("\n\nLegendary:"+cleantext)
-#         if i == 3:
-#             boss_item_r = re.compile(r'<td data-sort-value=(".*?")>')
-#             items = boss_item_r.findall(str(table))
-#             items = items[::2]
-#             f.write("\n\nBoss:"+cleantext)
-#         if i == 4:
-#             items = item_r.findall(str(table))
-#             f.write("\n\nWunar:"+cleantext)
-#     f.close()
-
-# def get_enemies():
-#     f = open("enemies.txt", "a")
-#     mon_gallery = requests.get("https://riskofrain2.fandom.com/wiki/Monsters")
-#     clean_page = bs4.BeautifulSoup(mon_gallery.text, 'html.parser')
-#     attr_list = ["health", "damage", "speed"]
-
-#     mons = clean_page.find("div", id="gallery-0")
-#     mon_list = []
-
-#     for monster in mons.stripped_strings:
-#         monster = re.sub(r"\s+", '_', monster)
-#         mon_list.append(monster)
-
-#     for monster in mon_list:
-#         for attr in attr_list:
-#             f.write(get_attr(monster + ",", attr)+"\n")
-#     f.close()
-
-# def get_attr(mon, attr):
-#     mon_url = requests.get("https://riskofrain2.fandom.com/wiki/" + mon)
-#     clean_mon_url = (bs4.BeautifulSoup(mon_url.text, 'html.parser'))
-#     t = clean_mon_url.find("div", {"data-source": attr})
-#     t2 = t.find("div", {"class":"pi-data-value pi-font"})
-#     leest = []
-#     for i in t2.stripped_strings:
-#         leest.append(i)
-#     stwing = (mon+","+attr+","+str(leest))
-#     return stwing
-    
+        search = cleaned.find("p")
+        search2 = search.find()
+        for i in search.stripped_strings:
+            print(i)
 
 
 
 
-# get_enemies()
-# get_items()
+
+
+def main():
+    # get_item_stats()
+    # get_enemies()
+    get_chests()
+
+main()
