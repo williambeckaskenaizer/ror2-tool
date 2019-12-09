@@ -224,6 +224,75 @@ def get_environments():
 
 def get_challenges():
     print("Getting Challenges")
+    challenge_list = []
+
+    challenge_page = requests.get("https://riskofrain2.fandom.com/wiki/Challenges")
+    clean_challenge_page = bs4.BeautifulSoup(challenge_page.text, 'html.parser')
+
+    attrs = ["name", "category", "unlock"]
+
+    rarity_count = 0
+    for challenge in clean_challenge_page:
+        challenge_table = clean_challenge_page.select("table")[rarity_count]
+    with open('challenges.csv', mode='w') as challenge_file:
+        counter=0
+        for entry in challenge_table.stripped_strings:
+            challenge_list.append(entry)
+
+        for challenge in challenge_list:
+            if counter != 2:
+                challenge_file.write(challenge + ",")
+                counter+=1
+            else:
+                challenge_file.write(challenge + "\n")
+                counter = 0
+
+def get_characters():
+    #[name, primary, secondary, tactical, ult]
+    """
+    there aren't really enough survivors to justify scraping... but since this page in the wiki is actually STRUCTURED, I can use the survivor function :)
+    oh god i forgot about the detail in their abilities. scraping will be required.
+    this is gonna get hacky.
+    """
+    print("getting survivors")
+    survivor_gallery = requests.get("https://riskofrain2.fandom.com/wiki/Survivors")
+    clean_survivor_page = bs4.BeautifulSoup(survivor_gallery.text, 'html.parser')
+    attr_list = ["health", "health regen", "damage", "speed", "armor", "unlock"]
+
+    survivors = clean_survivor_page.find("div", id="gallery-0")
+    survivor_list = []
+
+    for survivor in survivors.stripped_strings:
+        survivor = re.sub(r"\s+", '_', survivor)
+        survivor_list.append(survivor)
+        
+    stat_list = []
+    i_minus_one = ""
+    for survivor in survivor_list:
+        stat_list.append(survivor+",")
+        for attr in attr_list:
+
+            mon_url = requests.get("https://riskofrain2.fandom.com/wiki/" + survivor)
+            clean_mon_url = (bs4.BeautifulSoup(mon_url.text, 'html.parser'))
+            sub_for_mon = clean_mon_url.find("div", {"data-source": attr})
+            if sub_for_mon:
+                second_sub = sub_for_mon.find("div", {"class":"pi-data-value pi-font"})
+            for i in second_sub.stripped_strings:
+                if attr == "unlock":
+                    if i == "0":
+                        stat_list.append("Default\n")
+                    elif i == "20":
+                        stat_list.append("Guidance Offline\n")
+                    else:
+                        stat_list.append(i+"\n")
+                else:
+                    stat_list.append(i+",")
+
+    with open('survivors.csv', mode='w') as survivor_file:
+        survivor_file.write("Name,Health,Health Regen,Damage,Speed,Armor,Unlock\n")
+        for entry in stat_list:
+            survivor_file.write(entry)
+    print("done")
 
 
 def main():
@@ -232,5 +301,6 @@ def main():
     get_chests()
     get_bosses()
     get_environments()
-
+    get_challenges()
+    get_characters()
 main()
