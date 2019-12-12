@@ -259,7 +259,7 @@ def get_characters():
     print("getting survivors")
     survivor_gallery = requests.get("https://riskofrain2.fandom.com/wiki/Survivors")
     clean_survivor_page = bs4.BeautifulSoup(survivor_gallery.text, 'html.parser')
-    attr_list = ["health", "health regen", "damage", "speed", "armor", "unlock"]
+    attr_list = ["health", "regen", "damage", "speed", "armor", "unlock"]
 
     survivors = clean_survivor_page.find("div", id="gallery-0")
     survivor_list = []
@@ -300,9 +300,9 @@ def get_characters():
 def main():
     # get_item_stats()
     # get_enemies()
-    get_chests()
+    #get_chests()
     # get_bosses()
-    get_environments()
-    # get_challenges()
-    # get_characters()
+    #get_environments()
+    get_challenges()
+    get_characters()
 main()

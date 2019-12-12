@@ -1,9 +1,9 @@
 Name,Health,Health Regen,Damage,Speed,Armor,Unlock
-Artificer,110 (+33 per level),110 (+33 per level),12 (+2.4 per level),7 m/s,0,Pause
-Commando,110 (+33 per level),110 (+33 per level),12 (+2.4 per level),7 m/s,0,Default
-Engineer,130 (+39 per level),130 (+39 per level),14 (+2.8 per level),7 m/s,0,Engineering Perfection
-Huntress,90 (+27 per level),90 (+27 per level),12 (+2.4 per level),7 m/s,0,Warrior
-Loader,160 (+48 per level),160 (+48 per level),12 (+2.4 per level),7 m/s,20,Guidance Offline
-Mercenary,140 (+42 per level),140 (+42 per level),12 (+2.4 per level),7 m/s,20,True Respite
-MUL-T,200 (+60 per level),200 (+60 per level),11 (+2.2 per level),7 m/s,12,Verified
-REX,130 (+39 per level),130 (+39 per level),12 (+2.4 per level),7 m/s,20,Power Plant
+Artificer,110 (+33 per level),1/s (+0.2 per level),12 (+2.4 per level),7 m/s,0,Pause
+Commando,110 (+33 per level),1/s (+0.2 per level),12 (+2.4 per level),7 m/s,0,Default
+Engineer,130 (+39 per level),1/s (+0.2 per level),14 (+2.8 per level),7 m/s,0,Engineering Perfection
+Huntress,90 (+27 per level),1/s (+0.2 per level),12 (+2.4 per level),7 m/s,0,Warrior
+Loader,160 (+48 per level),2.5/s (+0.5 per level),12 (+2.4 per level),7 m/s,20,Guidance Offline
+Mercenary,140 (+42 per level),2.5/s (+0.5 per level),12 (+2.4 per level),7 m/s,20,True Respite
+MUL-T,200 (+60 per level),1/s (+0.2 per level),11 (+2.2 per level),7 m/s,12,Verified
+REX,130 (+39 per level),1/s (+0.2 per level),12 (+2.4 per level),7 m/s,20,Power Plant
