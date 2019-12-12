@@ -12,7 +12,7 @@ wikia pages as json objects (if it even still exists),
 this script parses HTML for the data required.
 
 What terrifies me the most, is that it is entirely
-build around the current structure of the wiki.
+built around the current structure of the wiki.
 should that change at any time, all will be lost.
 
 - Will
@@ -41,7 +41,7 @@ def get_item_stats():
     clean_items_page = bs4.BeautifulSoup(items_page.text, 'html.parser')
     #commons
     rarity_count = 0
-    for item in clean_items_page:
+    while rarity_count <=7:
         #regex for finding item name
         item_table = clean_items_page.select("table")[rarity_count]
         item_r = re.compile(r'<td data-sort-value="(.*?)">')
@@ -83,7 +83,7 @@ def get_item_stats():
                             i_cat=i
                     if attr == "unlock":
                         for i in ref_item_attr.stripped_strings:
-                            if i == "Damage" or i == "Healing" or i == "Utility":
+                            if i == "Damage" or i == "Healing" or i == "Utility" or i == "Equipment" or i == "Lunar Equipment" or i == "Elite Equipment":
                                 unlock="Default"
                             else:
                                 i_unlock=i
@@ -155,18 +155,19 @@ def get_chests():
 
     with open('chests.csv', mode='w') as chest_file:
         # "Chest Name","Item type, Common Chance, Uncommon Chance, Legendary Chance" ,"Base Cost"
-        chest_file.write("Barrel, Gold/XP, N/A, N/A, N/A, 0\n")
-        chest_file.write("Equipment Barrel, Equipment, N/A, N/A, N/A, 25\n")
-        chest_file.write("Cloaked Chest, Damage, Utility, Healing, White, Green, Red, 79.2, 19.8, 0.99, 0\n")
-        chest_file.write("Chest, Damage, Utility, Healing, White, Green, Red, 79.2, 19.8, 0.99, 25\n")
-        chest_file.write("Large Chest, Damage, Utility, Healing, Green, Red, 0, 80, 20, 50\n")
-        chest_file.write("Legendary Chest, Damage, Utility, Healing, Red, 0, 0, 100, 3200\n")
-        chest_file.write("Damage Chest, Damage, White, Green, Red, 79.2, 19.8, 0.99, 30\n")
-        chest_file.write("Utility Chest, Utility, White, Green, Red,  79.2, 19.8, 0.99, 30\n")
-        chest_file.write("Healing Chest, Healing, White, Green, Red, 79.2, 19.8, 0.99, 30\n")
-        chest_file.write("Lunar Pod, Lundar, Lunar, N/A, N/A, N/A, 1\n")
-        chest_file.write("Multishop Terminal, Damage, Utility, Healing, White, Green, Unknown, Unknown, Unkown, 30\n")
-        chest_file.write("Rusty Lockbox, Damage, Utility, Healing, White, Green, Red, Unknown, Unknown, Unkown, 0\n")
+        chest_file.write("Name, Item Type, Possible Rarity, White Chance, Green Chance, Red Chance, Base Cost\n")
+        chest_file.write("Barrel, Gold/XP, N/A, N/A, N/A, N/A, 0\n")
+        chest_file.write("Equipment Barrel, Equipment, N/A, N/A, N/A, N/A, 25\n")
+        chest_file.write("Cloaked Chest, \"Damage, Utility, Healing\", \"White, Green, Red\", 79.2, 19.8, 0.99, 0\n")
+        chest_file.write("Chest, \"Damage, Utility, Healing\", \"White, Green, Red\", 79.2, 19.8, 0.99, 25\n")
+        chest_file.write("Large Chest, \"Damage, Utility, Healing\", \"Green, Red\", 0, 80, 20, 50\n")
+        chest_file.write("Legendary Chest, \"Damage, Utility, Healing\", Red, 0, 0, 100, 3200\n")
+        chest_file.write("Damage Chest, Damage, \"White, Green, Red\", 79.2, 19.8, 0.99, 30\n")
+        chest_file.write("Utility Chest, Utility, \"White, Green, Red\",  79.2, 19.8, 0.99, 30\n")
+        chest_file.write("Healing Chest, Healing, \"White, Green, Red\", 79.2, 19.8, 0.99, 30\n")
+        chest_file.write("Lunar Pod, Lunar, Lunar, N/A, N/A, N/A, 1\n")
+        chest_file.write("Multishop Terminal, \"Damage, Utility, Healing\", \"White, Green\", Unknown, Unknown, Unkown, 30\n")
+        chest_file.write("Rusty Lockbox, \"Damage, Utility, Healing\", \"White, Green, Red\", Unknown, Unknown, Unkown, 0\n")
 
     print("Done.. teehee")
             
@@ -209,17 +210,18 @@ def get_environments():
     """
     # "Name","Sequence","Description"
     with open('environments.csv', mode='w') as environment_file:
-        environment_file.write("Distant Roost, 1, Spires of earth jut through the fog and unknown avian creatures circle far peaks guarding their broods.\n")
-        environment_file.write("Titanic Plains, 1, Gigantic stone arches bracket the skyline, while the main play-field overlooks a vast fractured tectonic lowland\n")
-        environment_file.write("Wetland Aspect, 2, A moist mire that consists mostly of ruined stone structures and swampy areas filled with water.\n")
-        environment_file.write("Abandoned Aqueduct, 2, An arid, sprawling desert located on Providence\n")
-        environment_file.write("Rallypoint Delta, 3, Rallypoint Delta is a desolate tundra located on Providence\n")
-        environment_file.write("Scorched Acres, 3, Burned ruins, comprised of many floating circular islands, which are connected by bridges and Gas Vents.\n")
-        environment_file.write("Abyssal Depths, 4, This hellfire-forged zone is ocated within the crust of the planet.")
-        environment_file.write("Siren's Call, 4, A Ship Graveyard, featuring long-abandoned ancient technologies.\n")
-        environment_file.write("Bazaar Between Time, ???, Existing neither here nor there, this place is a hidden realm run by The Celestials.\n")
-        environment_file.write("A Moment, Fractured, ???, A Hidden Realm, with multiple floating islands in the void. The last island contains the Obelisk.\n")
-        environment_file.write("Gilded Coast, ???, A Hidden Realm featuring the boss Aurelionite.\n")
+        environment_file.write("Name,Sequence Number,Description\n")
+        environment_file.write("Distant Roost, 1, \"Spires of earth jut through the fog and unknown avian creatures circle far peaks guarding their broods.\"\n")
+        environment_file.write("Titanic Plains, 1, \"Gigantic stone arches bracket the skyline, while the main play-field overlooks a vast fractured tectonic lowland\"\n")
+        environment_file.write("Wetland Aspect, 2, \"A moist mire that consists mostly of ruined stone structures and swampy areas filled with water.\"\n")
+        environment_file.write("Abandoned Aqueduct, 2, \"An arid, sprawling desert located on Providence\" \n")
+        environment_file.write("Rallypoint Delta, 3, \"Rallypoint Delta is a desolate tundra located on Providence\"\n")
+        environment_file.write("Scorched Acres, 3, \"Burned ruins, comprised of many floating circular islands, which are connected by bridges and Gas Vents.\"\n")
+        environment_file.write("Abyssal Depths, 4, \"This hellfire-forged zone is ocated within the crust of the planet.\"\n")
+        environment_file.write("Siren's Call, 4, A \"Ship Graveyard, featuring long-abandoned ancient technologies.\"\n")
+        environment_file.write("Bazaar Between Time, ???, \"Existing neither here nor there, this place is a hidden realm run by The Celestials.\"\n")
+        environment_file.write("\"A Moment, Fractured\", ???, \"A Hidden Realm, with multiple floating islands in the void. The last island contains the Obelisk.\"\n")
+        environment_file.write("Gilded Coast, ???, \"A Hidden Realm featuring the boss Aurelionite.\"\n")
     print("Done... teehee")
 
 def get_challenges():
@@ -296,11 +298,11 @@ def get_characters():
 
 
 def main():
-    get_item_stats()
-    get_enemies()
+    # get_item_stats()
+    # get_enemies()
     get_chests()
-    get_bosses()
+    # get_bosses()
     get_environments()
-    get_challenges()
-    get_characters()
+    # get_challenges()
+    # get_characters()
 main()

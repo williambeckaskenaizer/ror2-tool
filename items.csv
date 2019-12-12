@@ -60,3 +60,33 @@ Shattering_Justice,Legendary,"After hitting an enemy 5 times, reduce their armor
 Soulbound_Catalyst,Legendary,"Kills reduce equipment cooldown by 4s (+2s per stack) . ",Utility,Newtist
 Unstable_Tesla_Coil,Legendary,"Fire out lightning that hits 3 (+2 per stack) enemies for 200% base damage every 0.5s . The Tesla Coil switches off every 10 seconds . ",Damage,Macho
 Wake_of_Vultures,Legendary,"Gain the power of any killed elite monster for 8s (+5s per stack) . ",Utility,Default
+Brittle_Crown,Lunar,"30% chance on hit to gain 3 (+3 per stack) gold . Lose gold equal to 100% (+100% per stack) of amount you are hit for OR lose % gold equal to 100% (+100% per stack) of the maximum health % you lost. Chooses the greater of the two. ",Utility,Default
+Corpsebloom,Lunar,"Heal +100% (+100% per stack) more. All healing is applied over time . Can heal for a maximum of 10% (reduced by 50% per stack) of your health per second . ",Healing,Default
+Gesture_of_the_Drowned,Lunar,"Reduce Equipment cooldown by 50% (+15% per stack) . Forces your Equipment to activate whenever it is off cooldown . ",Utility,The Demons And The Crabs
+Shaped_Glass,Lunar,"Increase base damage by 100% (+100% per stack) . Reduce maximum health by 50% (+50% per stack) . ",Damage,Default
+Strides_of_Heresy,Lunar,"Replace your Utility Skill with Shadowfade . Fade away, becoming intangible and gaining +30% movement speed . Heal for 25% (+25% per stack) of your maximum health . Lasts 3 (+3 per stack) seconds. ",Healing,Default
+Transcendence,Lunar,"Convert all but 1 health into regenerating shields . Gain 50% (+25% per stack) maximum health . ",Utility,Default
+Blast_Shower,Equipment,"Cleanse all negative effects. Includes debuffs, damage over time, and nearby projectiles. ",Equipment,Default
+Disposable_Missile_Launcher,Equipment,"Fire a swarm of 12 missiles that deal 12x300% damage . ",Equipment,Default
+Eccentric_Vase,Equipment,"Create a quantum tunnel of up to 1000m in length. Lasts 30 seconds. ",Equipment,Default
+Foreign_Fruit,Equipment,"Instantly heal for 50% of your maximum health . ",Equipment,Default
+Fuel_Array,Equipment,"Looks like it could power something. EXTREMELY unstable... ",Equipment,Default
+Gnarled_Woodsprite,Equipment,"Gain a Woodsprite follower that heals for 1.5% of your maximum health/second . Can be sent to an ally to heal them for 10% of their maximum health . ",Equipment,One with the Woods
+Milky_Chrysalis,Equipment,"Sprout wings and fly for 15 seconds . Gain +20% movement speed for the duration. ",Equipment,Default
+Ocular_HUD,Equipment,"Gain +100% Critical Strike Chance for 8 seconds. ",Equipment,Default
+Preon_Accumulator,Equipment,"Fires preon tendrils, zapping enemies within 35m for up to 600% damage/second . On contact, detonate in an enormous 20m explosion for 4000% damage . ",Equipment,[REDACTED]
+Primordial_Cube,Equipment,"Fire a black hole that draws enemies within 30m into its center . Lasts 10 seconds ",Equipment,Default
+Radar_Scanner,Equipment,"Reveal all interactables within 500m for 10 seconds . ",Equipment,Bookworm
+Royal_Capacitor,Equipment,"Call down a lightning strike on a targeted monster, dealing 3000% damage and stunning nearby monsters. ",Equipment,Ascendant
+The_Back-up,Equipment,"Call 4 Strike Drones to fight for you. Lasts 25 seconds. ",Equipment,Mechanic
+The_Crowdfunder,Equipment,"Fires a continuous barrage that deals 100% damage per bullet . Costs $1 per bullet. Cost increases over time. ",Equipment,Funded!
+Volcanic_Egg,Equipment,"Turn into a draconic fireball for 5 seconds. Deal 500% damage on impact. Detonates at the end for 800% damage . ",Equipment,Default
+Effigy_of_Grief,Lunar Equipment,"ALL characters within are slowed by 50% and have their armor reduced by 20 . ",Lunar Equipment,Default
+Glowing_Meteorite,Lunar Equipment,"Rain meteors from the sky, damaging ALL characters for 600% damage per blast . Lasts 20 seconds. ",Lunar Equipment,Default
+Helfire_Tincture,Lunar Equipment,"Ignite ALL characters within 8m. Deal 5% of your maximum health/second as burning to yourself. The burn is 0.5x stronger on allies, and 24x stronger on enemies. ",Lunar Equipment,Default
+Spinel_Tonic,Lunar Equipment,"Drink the Tonic, gaining a boost for 15 seconds. Increases damage by +100% . Increases attack speed by +70% . Increases armor by +20 . Increases maximum health by +50% . Increases passive health regeneration by +300% . Increases movespeed by +30% . When the Tonic wears off, you have a 20% chance to gain a Tonic Affliction, reducing all of your stats by -5% (-5% per stack) . ",Lunar Equipment,Default
+Her_Biting_Embrace,Elite Equipment,"Become an aspect of ice. ",Elite Equipment,Default
+Ifrit's_Distinction,Elite Equipment,"Become an aspect of fire. ",Elite Equipment,Default
+N'kuhana's_Retort,Elite Equipment,"Become an aspect of corruption. ",Elite Equipment,Default
+Silence_Between_Two_Strikes,Elite Equipment,"Become an aspect of lightning. ",Elite Equipment,Default
+Spectral_Circlet,Elite Equipment,"Become an aspect of incorporeality. ",Elite Equipment,Default

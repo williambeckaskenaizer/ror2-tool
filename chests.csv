@@ -1,12 +1,13 @@
-Barrel, Gold/XP, N/A, N/A, N/A, 0
-Equipment Barrel, Equipment, N/A, N/A, N/A, 25
-Cloaked Chest, Damage, Utility, Healing, White, Green, Red, 79.2, 19.8, 0.99, 0
-Chest, Damage, Utility, Healing, White, Green, Red, 79.2, 19.8, 0.99, 25
-Large Chest, Damage, Utility, Healing, Green, Red, 0, 80, 20, 50
-Legendary Chest, Damage, Utility, Healing, Red, 0, 0, 100, 3200
-Damage Chest, Damage, White, Green, Red, 79.2, 19.8, 0.99, 30
-Utility Chest, Utility, White, Green, Red,  79.2, 19.8, 0.99, 30
-Healing Chest, Healing, White, Green, Red, 79.2, 19.8, 0.99, 30
-Lunar Pod, Lundar, Lunar, N/A, N/A, N/A, 1
-Multishop Terminal, Damage, Utility, Healing, White, Green, Unknown, Unknown, Unkown, 30
-Rusty Lockbox, Damage, Utility, Healing, White, Green, Red, Unknown, Unknown, Unkown, 0
+Name, Item Type, Possible Rarity, White Chance, Green Chance, Red Chance, Base Cost
+Barrel, Gold/XP, N/A, N/A, N/A, N/A, 0
+Equipment Barrel, Equipment, N/A, N/A, N/A, N/A, 25
+Cloaked Chest, "Damage, Utility, Healing", "White, Green, Red", 79.2, 19.8, 0.99, 0
+Chest, "Damage, Utility, Healing", "White, Green, Red", 79.2, 19.8, 0.99, 25
+Large Chest, "Damage, Utility, Healing", "Green, Red", 0, 80, 20, 50
+Legendary Chest, "Damage, Utility, Healing", Red, 0, 0, 100, 3200
+Damage Chest, Damage, "White, Green, Red", 79.2, 19.8, 0.99, 30
+Utility Chest, Utility, "White, Green, Red",  79.2, 19.8, 0.99, 30
+Healing Chest, Healing, "White, Green, Red", 79.2, 19.8, 0.99, 30
+Lunar Pod, Lunar, Lunar, N/A, N/A, N/A, 1
+Multishop Terminal, "Damage, Utility, Healing", "White, Green", Unknown, Unknown, Unkown, 30
+Rusty Lockbox, "Damage, Utility, Healing", "White, Green, Red", Unknown, Unknown, Unkown, 0
