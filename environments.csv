@@ -1,12 +1,12 @@
-Name,Sequence Number,Description
-Distant Roost, 1, "Spires of earth jut through the fog and unknown avian creatures circle far peaks guarding their broods."
-Titanic Plains, 1, "Gigantic stone arches bracket the skyline, while the main play-field overlooks a vast fractured tectonic lowland"
-Wetland Aspect, 2, "A moist mire that consists mostly of ruined stone structures and swampy areas filled with water."
-Abandoned Aqueduct, 2, "An arid, sprawling desert located on Providence" 
-Rallypoint Delta, 3, "Rallypoint Delta is a desolate tundra located on Providence"
-Scorched Acres, 3, "Burned ruins, comprised of many floating circular islands, which are connected by bridges and Gas Vents."
-Abyssal Depths, 4, "This hellfire-forged zone is ocated within the crust of the planet."
-Siren's Call, 4, A "Ship Graveyard, featuring long-abandoned ancient technologies."
-Bazaar Between Time, ???, "Existing neither here nor there, this place is a hidden realm run by The Celestials."
-"A Moment, Fractured", ???, "A Hidden Realm, with multiple floating islands in the void. The last island contains the Obelisk."
-Gilded Coast, ???, "A Hidden Realm featuring the boss Aurelionite."
+Name,Sequence Number,Description,,
+Distant Roost,1," ""Spires of earth jut through the fog and unknown avian creatures circle far peaks guarding their broods.""",,
+Titanic Plains,1," ""Gigantic stone arches bracket the skyline"," while the main play-field overlooks a vast fractured tectonic lowland""",
+Wetland Aspect,2," ""A moist mire that consists mostly of ruined stone structures and swampy areas filled with water.""",,
+Abandoned Aqueduct,2," ""An arid"," sprawling desert located on Providence"" ",
+Rallypoint Delta,3," ""Rallypoint Delta is a desolate tundra located on Providence""",,
+Scorched Acres,3," ""Burned ruins", comprised of many floating circular islands," which are connected by bridges and Gas Vents."""
+Abyssal Depths,4," ""This hellfire-forged zone is ocated within the crust of the planet.""",,
+Siren's Call,4," A ""Ship Graveyard"," featuring long-abandoned ancient technologies.""",
+Bazaar Between Time,???," ""Existing neither here nor there"," this place is a hidden realm run by The Celestials.""",
+"A Moment, Fractured",???," ""A Hidden Realm"," with multiple floating islands in the void. The last island contains the Obelisk.""",
+Gilded Coast,???," ""A Hidden Realm featuring the boss Aurelionite.""",,
