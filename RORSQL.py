@@ -23,7 +23,7 @@ session = Session()
 #         if line_count == 0:
 #             line_count = 0
 #         else:
-#             session.execute(insert_query, [{"item_id": line_count, "item_name": row[0], "item_rarity": row[1], "item_effect" : row[2], "item_type": row[3]}])
+#             session.execute(insert_query, [{"item_id": line_count, "item_name": row[0], "item_rarity": row[1], "item_effect" : row[2], "item_type": row[3], "item_unlocked": row[4]}])
 #         line_count += 1
 
 # with open("enemies.csv", "r") as enemy_file:
