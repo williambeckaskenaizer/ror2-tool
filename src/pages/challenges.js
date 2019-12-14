@@ -51,7 +51,7 @@ import MUIDataTable from "mui-datatables";
   const columns = [
     { label: "ID", name: "challenge_id" },
     { label: "Name", name: "challenge_name"}, 
-    { label: "Description", name: "challenge_description"}, 
-    { label: "Unlocked By", name: "challenge_unlock"},
+    { label: "Description", name: "challenge_desc"}, 
+    { label: "Unlocks", name: "challenge_unlock"},
     { label: "Unlock Type", name: "unlock_type"}
   ];

@@ -53,6 +53,6 @@ const columns = [
   { label: "Possible Rarity", name: "chest_possible_rarity" }, 
   { label: "White Chance", name: "chest_white_chance" },
   { label: "Green Chance", name:"chest_green_chance"},
-  { label: "Red Chance", name: "chance_red_chance" },
-  { label: "Base Cost", name: "cance_base_cost" },
+  { label: "Red Chance", name: "chest_red_chance" },
+  { label: "Base Cost", name: "chest_base_cost" },
 ];
