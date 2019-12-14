@@ -95,6 +95,54 @@ export default function StatTester() {
 
     return (
         <div>
+            <h1>UNDER CONSTRUCTION</h1>
+        </div>
+    );
+}
+
+
+function getPlayerFactor(pc) {
+    return 1 + 0.3 * (pc - 1)
+}
+
+function getTimeFactor(dv, pc) {
+    var val = 0
+    switch(dv){
+        case 'Drizzle': val=1
+        break;
+        case 'Rainstorm': val=2
+        break;
+        case 'Monsoon': val=3
+    }
+    return 0.046 * val * (pc ** 0.2)
+}
+
+function getStageFactor(sc) {
+    return 1.15 ** sc
+}
+
+function getCoeff(pf, min, tf, sf) {
+    return (pf + min * tf) * sf
+}
+
+function getEnemyLevel(co, pf) {
+    return 1 + (co - pf) / 0.33
+}
+
+function getEnemyHP(enemy){
+    switch(enemy){
+        case 'Imp': return [200, 75]
+        case 'Beetle': return [80, 24]
+        case 'Lemurian': return [80, 24]
+        case 'Stone Golem': return [480, 144]
+    }
+}
+
+
+
+//{Math.round(enemyLevel)}&nbsp; HP: {enemyHP}
+
+{/* <div>
             <h2>Testing Grounds</h2>
             <FormControl variant="filled" className={classes.formControl}>
                 <InputLabel id="demo-simple-select-label">Select difficulty</InputLabel>
@@ -146,9 +194,9 @@ export default function StatTester() {
                     </Select>
                 </FormControl>
                 {/* <FormControl>
-                    <Button variant = "filled" className = {classes.button}>what the FUCK</Button>
-                </FormControl> */}
-            </div>
+                    <Button variant = "filled" className = {classes.button}></Button>
+                </FormControl> } */
+           /* </div>
             <div>
                 <FormControl variant="filled" className={classes.formControl}>
                     <Card className={classes.card}>
@@ -176,48 +224,4 @@ export default function StatTester() {
                     </Card>
                 </FormControl>
             </div>
-        </div >
-    );
-}
-
-
-function getPlayerFactor(pc) {
-    return 1 + 0.3 * (pc - 1)
-}
-
-function getTimeFactor(dv, pc) {
-    var val = 0
-    switch(dv){
-        case 'Drizzle': val=1
-        break;
-        case 'Rainstorm': val=2
-        break;
-        case 'Monsoon': val=3
-    }
-    return 0.046 * val * (pc ** 0.2)
-}
-
-function getStageFactor(sc) {
-    return 1.15 ** sc
-}
-
-function getCoeff(pf, min, tf, sf) {
-    return (pf + min * tf) * sf
-}
-
-function getEnemyLevel(co, pf) {
-    return 1 + (co - pf) / 0.33
-}
-
-function getEnemyHP(enemy){
-    switch(enemy){
-        case 'Imp': return [200, 75]
-        case 'Beetle': return [80, 24]
-        case 'Lemurian': return [80, 24]
-        case 'Stone Golem': return [480, 144]
-    }
-}
-
-
-
-//{Math.round(enemyLevel)}&nbsp; HP: {enemyHP}
+        </div > */}

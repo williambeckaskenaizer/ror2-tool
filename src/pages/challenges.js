@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { navigate } from 'hookrouter'
 import MUIDataTable from "mui-datatables";
 
@@ -11,42 +11,47 @@ import MUIDataTable from "mui-datatables";
     selectableRows: "none",
     download: false,
     print: false,
-    renderExpandableRow: (e) => handleClick(e),
     rowHover: false
   }
 
   export default function Challenges(){
 
+    const [items, setItems] = React.useState([{}]);
+
+    useEffect(() => {
+  
+      fetch('http://localhost:8000/api/challenges', {
+            method: 'GET',
+            headers: {
+            "Accept": "application/json",
+            'Content-Type': 'application/json'
+            }
+      })
+      .then(response => response.json())
+      .then(data => {
+        setItems(data.results);
+      })
+      .catch(err => { console.log("fetch error" + err); });
+  
+    }, []);
+  
     return (
-      <MUIDataTable hover
-        title={"Challenges"}
-        data={rows}
-        columns={columns}
-        options={options}
-      />
+      <div>
+        <MUIDataTable hover
+          title={"Challenges"}
+          data={items}
+          columns={columns}
+          options={options}
+        />
+      </div>
     );
-}
-
-function createData(challenge, description, unlocks){
-    return [ challenge, description, unlocks ];
-}
-
-function handleClick(event){
-  console.log("clicked" + event)
-  switch(event[0]){
-    case 'Commando': navigate("/characters/commando", true)
-    break;
-    case 'Huntress': navigate("/characters/huntress", true)
-    break;
-    default: navigate("/characters",true)
   }
-}
-
-const rows = [
-    createData("Warrior", "Reach and complete the 3rd Teleporter event without dying", "The Huntress"),
-    createData("Verified", "Complete the first Teleporter event 5 times", "MUL-T"),
+  
+  
+  const columns = [
+    { label: "ID", name: "challenge_id" },
+    { label: "Name", name: "challenge_name"}, 
+    { label: "Description", name: "challenge_description"}, 
+    { label: "Unlocked By", name: "challenge_unlock"},
+    { label: "Unlock Type", name: "unlock_type"}
   ];
-
-const columns = [
-  "Challenge","Description","Unlocks"
-];

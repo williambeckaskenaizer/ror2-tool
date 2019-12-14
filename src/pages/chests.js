@@ -26,10 +26,7 @@ import MUIDataTable from "mui-datatables";
     })
     .then(response => response.json())
     .then(data => {
-      //console.log(data);
-      //const test = [];
       setItems(data.results);
-      //console.log(items);
     })
     .catch(err => { console.log("fetch error" + err); });
 
@@ -38,7 +35,7 @@ import MUIDataTable from "mui-datatables";
   return (
     <div>
       <MUIDataTable hover
-        title={"Items"}
+        title={"Chests"}
         data={items}
         columns={columns}
         options={options}

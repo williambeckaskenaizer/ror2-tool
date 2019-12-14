@@ -38,7 +38,7 @@ export default function CharTable() {
   return (
     <div>
       <MUIDataTable hover
-        title={"Items"}
+        title={"Characters"}
         data={items}
         columns={columns}
         options={options}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { navigate } from 'hookrouter'
 import MUIDataTable from "mui-datatables";
 
@@ -8,42 +8,49 @@ import MUIDataTable from "mui-datatables";
     selectableRows: "none",
     download: false,
     print: false,
-    renderExpandableRow: (e) => handleClick(e),
     rowHover: false
   }
 
   export default function Bosses(){
 
-    return (
+    const [items, setItems] = React.useState([{}]);
+
+  useEffect(() => {
+
+    fetch('http://localhost:8000/api/bosses', {
+          method: 'GET',
+          headers: {
+          "Accept": "application/json",
+          'Content-Type': 'application/json'
+          }
+    })
+    .then(response => response.json())
+    .then(data => {
+      setItems(data.results);
+    })
+    .catch(err => { console.log("fetch error" + err); });
+
+  }, []);
+
+  return (
+    <div>
       <MUIDataTable hover
         title={"Bosses"}
-        data={rows}
+        data={items}
         columns={columns}
         options={options}
       />
-    );
+    </div>
+  );
 }
 
-function createData(name, health, damage, speed, armor){
-    return [ name, health, damage, speed, armor ];
-}
-
-function handleClick(event){
-  console.log("clicked" + event)
-  switch(event[0]){
-    case 'Commando': navigate("/characters/commando", true)
-    break;
-    case 'Huntress': navigate("/characters/huntress", true)
-    break;
-    default: navigate("/characters",true)
-  }
-}
-
-const rows = [
-    createData("Imp Overlord", "2800 (+840 per level)", "16 (+3.2 per level)", "13 m/s", "20"),
-    createData("Beetle Queen", "2100 (+630 per level)", "25(+5 per level)", "6 m/s", "20"),
-  ];
 
 const columns = [
-  "Name","Health","Damage","Speed","Armor"
+  { label: "ID", name: "boss_id" },
+  { label: "Name", name: "boss_name"}, 
+  { label: "Health", name: "boss_health"}, 
+  { label: "Attack", name: "boss_attack"},
+  { label: "Speed", name: "boss_speed"},
+  { label: "Armor", name: "boss_armor"},
+  
 ];
