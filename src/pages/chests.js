@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { navigate } from 'hookrouter'
 import MUIDataTable from "mui-datatables";
 
@@ -8,42 +8,54 @@ import MUIDataTable from "mui-datatables";
     selectableRows: "none",
     download: false,
     print: false,
-    renderExpandableRow: (e) => handleClick(e),
     rowHover: false
   }
 
   export default function Chests(){
 
-    return (
+    const [items, setItems] = React.useState([{}]);
+
+  useEffect(() => {
+
+    fetch('http://localhost:8000/api/chests', {
+          method: 'GET',
+          headers: {
+          "Accept": "application/json",
+          'Content-Type': 'application/json'
+          }
+    })
+    .then(response => response.json())
+    .then(data => {
+      //console.log(data);
+      //const test = [];
+      setItems(data.results);
+      //console.log(items);
+    })
+    .catch(err => { console.log("fetch error" + err); });
+
+  }, []);
+
+  return (
+    <div>
       <MUIDataTable hover
-        title={"Chests"}
-        data={rows}
+        title={"Items"}
+        data={items}
         columns={columns}
         options={options}
       />
-    );
+    </div>
+  );
 }
 
-function createData(name ,type, common_chance, uncommon_chance, legendary_chance, base_cost){
-    return [ name ,type, common_chance, uncommon_chance, legendary_chance, base_cost ];
-}
 
-function handleClick(event){
-  console.log("clicked" + event)
-  switch(event[0]){
-    case 'Commando': navigate("/characters/commando", true)
-    break;
-    case 'Huntress': navigate("/characters/huntress", true)
-    break;
-    default: navigate("/characters",true)
-  }
-}
-
-const rows = [
-    createData("Chest", "White, Green, Red", "79.2%", "19.8%", "0.99%", "25g"),
-    createData("Large Chest", "Green, Red", "0%", "80%", "20%", "50g"),
-  ];
 
 const columns = [
-  "Chest Name","Item type", "Common Chance", "Uncommon Chance", "Legendary Chance" ,"Base Cost"
+  { label: "ID", name: "chest_id" },
+  { label: "Name", name: "chest_name" }, 
+  { label: "Item Type", name: "chest_item_type" }, 
+  { label: "Possible Rarity", name: "chest_possible_rarity" }, 
+  { label: "White Chance", name: "chest_white_chance" },
+  { label: "Green Chance", name:"chest_green_chance"},
+  { label: "Red Chance", name: "chance_red_chance" },
+  { label: "Base Cost", name: "cance_base_cost" },
 ];

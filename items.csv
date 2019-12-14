@@ -1,92 +1,92 @@
 Name,Rarity,Description,Category,Unlocked By
-Armor-Piercing_Rounds,Common,"Deal an additional 20% damage (+20% per stack) to bosses. ",Damage,Advancement
-Backup_Magazine,Common,"Add +1 (+1 per stack) charge of your Secondary skill . ",Utility,Flawless
-Bundle_of_Fireworks,Common,"Activating an interactable launches 8 (+4 per stack) fireworks that deal 300% base damage. ",Damage,...Maybe One More
-Bustling_Fungus,Common,"After standing still for 2 seconds, create a zone that heals for 4.5% (+2.25% per stack) of your health every second to all allies within 3m (+1.5m per stack) . ",Healing,Default
-Cautious_Slug,Common,"Increases passive health regeneration by 300% (+300% per stack) while outside of combat. ",Healing,Default
+Armor-Piercing Rounds,Common,"Deal an additional 20% damage (+20% per stack) to bosses. ",Damage,Advancement
+Backup Magazine,Common,"Add +1 (+1 per stack) charge of your Secondary skill . ",Utility,Flawless
+Bundle of Fireworks,Common,"Activating an interactable launches 8 (+4 per stack) fireworks that deal 300% base damage. ",Damage,...Maybe One More
+Bustling Fungus,Common,"After standing still for 2 seconds, create a zone that heals for 4.5% (+2.25% per stack) of your health every second to all allies within 3m (+1.5m per stack) . ",Healing,Default
+Cautious Slug,Common,"Increases passive health regeneration by 300% (+300% per stack) while outside of combat. ",Healing,Default
 Crowbar,Common,"Deal 150% (+50% per stack) damage to enemies above 90% health . ",Damage,The Basics
-Energy_Drink,Common,"Sprint speed is improved by 30% (+20% per stack) . ",Utility,Default
-Focus_Crystal,Common,"Increase damage to enemies within 13m by 15% (+15% per stack) . ",Damage,Default
+Energy Drink,Common,"Sprint speed is improved by 30% (+20% per stack) . ",Utility,Default
+Focus Crystal,Common,"Increase damage to enemies within 13m by 15% (+15% per stack) . ",Damage,Default
 Gasoline,Common,"Killing an enemy ignites all enemies within 12m (+4m per stack) . Enemies burn for 150% (+75% per stack) base damage. ",Damage,Default
-Lens-Maker's_Glasses,Common,"Your attacks have a 10% (+10% per stack) chance to ' Critically Strike ', dealing double damage . ",Damage,Default
+Lens-Maker's Glasses,Common,"Your attacks have a 10% (+10% per stack) chance to ' Critically Strike ', dealing double damage . ",Damage,Default
 Medkit,Common,"Heal for 10 (+10 per stack) health 1.1 seconds after getting hurt. ",Healing,Elite Slayer
-Monster_Tooth,Common,"Killing an enemy spawns a healing orb that heals for 8 (+8 per stack) health . ",Healing,Default
-Paul's_Goat_Hoof,Common,"Increases movement speed by 14% (+14% per stack) . ",Utility,"Is This Bugged?"
-Personal_Shield_Generator,Common,"Gain a 25 (+25 per stack) health shield . Recharges outside of danger. ",Utility,Default
-Rusted_Key,Common,"A hidden cache containing an item will appear in a random location on each stage . (Increases rarity of the item per stack) . ",Utility,Keyed Up
-Soldier's_Syringe,Common,"Increases attack speed by 15% (+15% per stack) . ",Damage,Default
-Sticky_Bomb,Common,"5% (+5% per stack) chance on hit to attach a bomb to an enemy, detonating for 180% TOTAL damage. ",Damage,Default
-Stun_Grenade,Common,"5% (+5% on stack) chance on hit to stun enemies for 2 seconds . ",Utility,Default
-Topaz_Brooch,Common,"Gain a temporary barrier on kill for 15 health (+15 per stack) . ",Healing,Default
-Tougher_Times,Common,"15% (+15% per stack) chance to block incoming damage. Unaffected by luck . ",Utility,Learning Process
-Tri-Tip_Dagger,Common,"15% (+15% per stack) chance to bleed an enemy for 240% base damage. ",Damage,Default
+Monster Tooth,Common,"Killing an enemy spawns a healing orb that heals for 8 (+8 per stack) health . ",Healing,Default
+Paul's Goat Hoof,Common,"Increases movement speed by 14% (+14% per stack) . ",Utility,"Is This Bugged?"
+Personal Shield Generator,Common,"Gain a 25 (+25 per stack) health shield . Recharges outside of danger. ",Utility,Default
+Rusted Key,Common,"A hidden cache containing an item will appear in a random location on each stage . (Increases rarity of the item per stack) . ",Utility,Keyed Up
+Soldier's Syringe,Common,"Increases attack speed by 15% (+15% per stack) . ",Damage,Default
+Sticky Bomb,Common,"5% (+5% per stack) chance on hit to attach a bomb to an enemy, detonating for 180% TOTAL damage. ",Damage,Default
+Stun Grenade,Common,"5% (+5% on stack) chance on hit to stun enemies for 2 seconds . ",Utility,Default
+Topaz Brooch,Common,"Gain a temporary barrier on kill for 15 health (+15 per stack) . ",Healing,Default
+Tougher Times,Common,"15% (+15% per stack) chance to block incoming damage. Unaffected by luck . ",Utility,Learning Process
+Tri-Tip Dagger,Common,"15% (+15% per stack) chance to bleed an enemy for 240% base damage. ",Damage,Default
 Warbanner,Common,"On level up drop a banner that strengthens all allies within 16m (+8m per stack) . Raise attack and movement speed by 30% . ",Utility,Default
-AtG_Missile_Mk._1,Uncommon,"10% chance to fire a missile that deals 300% (+300% per stack) TOTAL damage. ",Damage,Default
+AtG Missile Mk.1,Uncommon,"10% chance to fire a missile that deals 300% (+300% per stack) TOTAL damage. ",Damage,Default
 Bandolier,Uncommon,"18% (+10% per stack) chance on kill to drop an ammo pack that resets all skill cooldowns . ",Utility,Default
-Berzerker's_Pauldron,Uncommon,"Killing 3 enemies within 1 second sends you into a frenzy for 6s (+4s per stack) . Increases movement speed by 50% and attack speed by 100% . ",Damage,Glorious Battle
+Berzerker's Pauldron,Uncommon,"Killing 3 enemies within 1 second sends you into a frenzy for 6s (+4s per stack) . Increases movement speed by 50% and attack speed by 100% . ",Damage,Glorious Battle
 Chronobauble,Uncommon,"Slow enemies on hit for -60% movement speed for 2s (+2s per stack) . ",Utility,Default
-Fuel_Cell,Uncommon,"Hold an additional equipment charge (+1 per stack) . Reduce equipment cooldown by 15% (+15% per stack) . ",Utility,Experimenting
-Harvester's_Scythe,Uncommon,"Gain 5% critical chance (+0% per stack) . Critical strikes heal for 8 (+4 per stack) health . ",Healing,Prismatically Aligned
-Hopoo_Feather,Uncommon,"Gain +1 (+1 per stack) maximum jump count . ",Utility,Default
+Fuel Cell,Uncommon,"Hold an additional equipment charge (+1 per stack) . Reduce equipment cooldown by 15% (+15% per stack) . ",Utility,Experimenting
+Harvester's Scythe,Uncommon,"Gain 5% critical chance (+0% per stack) . Critical strikes heal for 8 (+4 per stack) health . ",Healing,Prismatically Aligned
+Hopoo Feather,Uncommon,"Gain +1 (+1 per stack) maximum jump count . ",Utility,Default
 Infusion,Uncommon,"Killing an enemy increases your health permanently by 1 , up to a maximum of 100 (+100 per stack) health . ",Healing,Slaughter
-Kjaro's_Band,Uncommon,"8% chance on hit to strike an enemy with a runic flame tornado , dealing 500% (+250% per stack) TOTAL damage. ",Damage,Death Do Us Part
-Leeching_Seed,Uncommon,"Dealing damage heals you for 1 (+1 per stack) health . ",Healing,Default
-Lepton_Daisy,Uncommon,"Release a healing nova during the Teleporter event, healing all nearby allies for 50% of their maximum health. Occurs 1 (+1 per stack) times. ",Healing,Default
-Old_Guillotine,Uncommon,"Instantly kill Elite monsters below 20% (+20% per stack) health . ",Damage,Default
-Old_War_Stealthkit,Uncommon,"Chance on taking damage to gain 40% movement speed and invisibility for 3s (+1.5s per stack) . Chance increases the more damage you take. ",Utility,Default
-Predatory_Instincts,Uncommon,"Gain 5% critical chance (+0% per stack) . Critical strikes increase attack speed by 10% . Maximum cap of 30% (+20% per stack) attack speed . ",Damage,Rapidfire
-Red_Whip,Uncommon,"Leaving combat boosts your movement speed by 30% (+30% per stack) . ",Utility,Default
-Rose_Buckler,Uncommon,"Increase armor by 30 (+30 per stack) while sprinting . ",Utility,Default
-Runald's_Band,Uncommon,"8% chance on hit to strike an enemy with a runic ice blast , slowing them by 80% and dealing 250% (+125% per stack) TOTAL damage. ",Damage,Death Do Us Part
+Kjaro's Band,Uncommon,"8% chance on hit to strike an enemy with a runic flame tornado , dealing 500% (+250% per stack) TOTAL damage. ",Damage,Death Do Us Part
+Leeching Seed,Uncommon,"Dealing damage heals you for 1 (+1 per stack) health . ",Healing,Default
+Lepton Daisy,Uncommon,"Release a healing nova during the Teleporter event, healing all nearby allies for 50% of their maximum health. Occurs 1 (+1 per stack) times. ",Healing,Default
+Old Guillotine,Uncommon,"Instantly kill Elite monsters below 20% (+20% per stack) health . ",Damage,Default
+Old War Stealthkit,Uncommon,"Chance on taking damage to gain 40% movement speed and invisibility for 3s (+1.5s per stack) . Chance increases the more damage you take. ",Utility,Default
+Predatory Instincts,Uncommon,"Gain 5% critical chance (+0% per stack) . Critical strikes increase attack speed by 10% . Maximum cap of 30% (+20% per stack) attack speed . ",Damage,Rapidfire
+Red Whip,Uncommon,"Leaving combat boosts your movement speed by 30% (+30% per stack) . ",Utility,Default
+Rose Buckler,Uncommon,"Increase armor by 30 (+30 per stack) while sprinting . ",Utility,Default
+Runald's Band,Uncommon,"8% chance on hit to strike an enemy with a runic ice blast , slowing them by 80% and dealing 250% (+125% per stack) TOTAL damage. ",Damage,Death Do Us Part
 Ukulele,Uncommon,"25% chance to fire chain lighting for 80% TOTAL damage on up to 3 (+2 per stack) targets within 20m (+2m per stack) . ",Damage,Default
-War_Horn,Uncommon,"Activating your Equipment gives you +70% attack speed for 8s (+4s per stack) . ",Damage,Warmonger
-Wax_Quail,Uncommon,"Jumping while sprinting boosts you forward by 10m (+10m per stack) . ",Utility,Going Fast Recommended
+War Horn,Uncommon,"Activating your Equipment gives you +70% attack speed for 8s (+4s per stack) . ",Damage,Warmonger
+Wax Quail,Uncommon,"Jumping while sprinting boosts you forward by 10m (+10m per stack) . ",Utility,Going Fast Recommended
 Will-o'-the-wisp,Uncommon,"On killing an enemy, spawn a lava pillar in a 12m (+2.4m per stack) radius for 350% (+280% per stack) base damage. ",Damage,Default
-57_Leaf_Clover,Legendary,"All random effects are rolled +1 (+1 per stack) times for a favorable outcome. ",Utility,The Long Road
+57 Leaf Clover,Legendary,"All random effects are rolled +1 (+1 per stack) times for a favorable outcome. ",Utility,The Long Road
 Aegis,Legendary,"Healing past full grants you a temporary barrier for 50% (+50% per stack) of the amount you healed . ",Healing,Default
-Alien_Head,Legendary,"Reduce skill cooldowns by 25% (+25% per stack) . ",Utility,Default
+Alien Head,Legendary,"Reduce skill cooldowns by 25% (+25% per stack) . ",Utility,Default
 Brainstalks,Legendary,"Upon killing an elite monster, enter a frenzy for 3s (+2s per stack) where skills have no cooldowns . ",Utility,Deicide
-Brilliant_Behemoth,Legendary,"All your attacks explode in a 4m (+2.5m per stack) radius for a bonus 60% TOTAL damage to nearby enemies. ",Damage,Default
-Ceremonial_Dagger,Legendary,"Killing an enemy fires out 3 homing daggers that deal 150% (+150% per stack) base damage. ",Damage,Default
-Dio's_Best_Friend,Legendary,"Upon death , this item will be consumed and you will return to life with 3 seconds of invulnerability . ",Utility,The Lone Survivor
-Frost_Relic,Legendary,"Killing an enemy surrounds you with an ice storm that deals 600% damage per second . The storm grows with every kill , increasing its radius by 1m . Stacks up to 6m (+6m per stack) . ",Damage,Default
-H3AD-5T_v2,Legendary,"Increase jump height . Creates a 10m radius kinetic explosion on hitting the ground, dealing 2300% base damage that scales up with speed . Recharges in 10 (-50% per stack) seconds. ",Utility,Default
-Happiest_Mask,Legendary,"Killing enemies has a 10% chance to spawn a ghost of the killed enemy with 500% damage. Lasts 30s (+30s per stack) . ",Utility,Default
-Hardlight_Afterburner,Legendary,"Add +2 (+2 per stack) charges of your Utility skill . Reduces Utility skill cooldown by 33% . ",Utility,Default
-N'kuhana's_Opinion,Legendary,"Store 100% (+100% per stack) of healing as Soul Energy . After your Soul Energy reaches 10% of your maximum health , fire a skull that deals 250% of your Soul Energy as damage . ",Damage,Her Concepts
-Rejuvenation_Rack,Legendary,"Heal +100% (+100% per stack) more. ",Healing,Naturopath
-Sentient_Meat_Hook,Legendary,"20% (+20% per stack) chance on hit to fire homing hooks at up to 10 (+5 per stack) enemies for 100% TOTAL damage. ",Damage,Deja Vu?
-Shattering_Justice,Legendary,"After hitting an enemy 5 times, reduce their armor by 60 for 8 (+8 per stack) seconds. ",Legendary,Legendary
-Soulbound_Catalyst,Legendary,"Kills reduce equipment cooldown by 4s (+2s per stack) . ",Utility,Newtist
-Unstable_Tesla_Coil,Legendary,"Fire out lightning that hits 3 (+2 per stack) enemies for 200% base damage every 0.5s . The Tesla Coil switches off every 10 seconds . ",Damage,Macho
-Wake_of_Vultures,Legendary,"Gain the power of any killed elite monster for 8s (+5s per stack) . ",Utility,Default
-Brittle_Crown,Lunar,"30% chance on hit to gain 3 (+3 per stack) gold . Lose gold equal to 100% (+100% per stack) of amount you are hit for OR lose % gold equal to 100% (+100% per stack) of the maximum health % you lost. Chooses the greater of the two. ",Utility,Default
+Brilliant Behemoth,Legendary,"All your attacks explode in a 4m (+2.5m per stack) radius for a bonus 60% TOTAL damage to nearby enemies. ",Damage,Default
+Ceremonial Dagger,Legendary,"Killing an enemy fires out 3 homing daggers that deal 150% (+150% per stack) base damage. ",Damage,Default
+Dio's Best Friend,Legendary,"Upon death , this item will be consumed and you will return to life with 3 seconds of invulnerability . ",Utility,The Lone Survivor
+Frost Relic,Legendary,"Killing an enemy surrounds you with an ice storm that deals 600% damage per second . The storm grows with every kill , increasing its radius by 1m . Stacks up to 6m (+6m per stack) . ",Damage,Default
+H3AD-5T v2,Legendary,"Increase jump height . Creates a 10m radius kinetic explosion on hitting the ground, dealing 2300% base damage that scales up with speed . Recharges in 10 (-50% per stack) seconds. ",Utility,Default
+Happiest Mask,Legendary,"Killing enemies has a 10% chance to spawn a ghost of the killed enemy with 500% damage. Lasts 30s (+30s per stack) . ",Utility,Default
+Hardlight Afterburner,Legendary,"Add +2 (+2 per stack) charges of your Utility skill . Reduces Utility skill cooldown by 33% . ",Utility,Default
+N'kuhana's Opinion,Legendary,"Store 100% (+100% per stack) of healing as Soul Energy . After your Soul Energy reaches 10% of your maximum health , fire a skull that deals 250% of your Soul Energy as damage . ",Damage,Her Concepts
+Rejuvenation Rack,Legendary,"Heal +100% (+100% per stack) more. ",Healing,Naturopath
+Sentient Meat Hook,Legendary,"20% (+20% per stack) chance on hit to fire homing hooks at up to 10 (+5 per stack) enemies for 100% TOTAL damage. ",Damage,Deja Vu?
+Shattering Justice,Legendary,"After hitting an enemy 5 times, reduce their armor by 60 for 8 (+8 per stack) seconds. ",Legendary,Legendary
+Soulbound Catalyst,Legendary,"Kills reduce equipment cooldown by 4s (+2s per stack) . ",Utility,Newtist
+Unstable Tesla Coil,Legendary,"Fire out lightning that hits 3 (+2 per stack) enemies for 200% base damage every 0.5s . The Tesla Coil switches off every 10 seconds . ",Damage,Macho
+Wake of Vultures,Legendary,"Gain the power of any killed elite monster for 8s (+5s per stack) . ",Utility,Default
+Brittle Crown,Lunar,"30% chance on hit to gain 3 (+3 per stack) gold . Lose gold equal to 100% (+100% per stack) of amount you are hit for OR lose % gold equal to 100% (+100% per stack) of the maximum health % you lost. Chooses the greater of the two. ",Utility,Default
 Corpsebloom,Lunar,"Heal +100% (+100% per stack) more. All healing is applied over time . Can heal for a maximum of 10% (reduced by 50% per stack) of your health per second . ",Healing,Default
-Gesture_of_the_Drowned,Lunar,"Reduce Equipment cooldown by 50% (+15% per stack) . Forces your Equipment to activate whenever it is off cooldown . ",Utility,The Demons And The Crabs
-Shaped_Glass,Lunar,"Increase base damage by 100% (+100% per stack) . Reduce maximum health by 50% (+50% per stack) . ",Damage,Default
-Strides_of_Heresy,Lunar,"Replace your Utility Skill with Shadowfade . Fade away, becoming intangible and gaining +30% movement speed . Heal for 25% (+25% per stack) of your maximum health . Lasts 3 (+3 per stack) seconds. ",Healing,Default
+Gesture of the Drowned,Lunar,"Reduce Equipment cooldown by 50% (+15% per stack) . Forces your Equipment to activate whenever it is off cooldown . ",Utility,The Demons And The Crabs
+Shaped Glass,Lunar,"Increase base damage by 100% (+100% per stack) . Reduce maximum health by 50% (+50% per stack) . ",Damage,Default
+Strides of Heresy,Lunar,"Replace your Utility Skill with Shadowfade . Fade away, becoming intangible and gaining +30% movement speed . Heal for 25% (+25% per stack) of your maximum health . Lasts 3 (+3 per stack) seconds. ",Healing,Default
 Transcendence,Lunar,"Convert all but 1 health into regenerating shields . Gain 50% (+25% per stack) maximum health . ",Utility,Default
-Blast_Shower,Equipment,"Cleanse all negative effects. Includes debuffs, damage over time, and nearby projectiles. ",Equipment,Default
-Disposable_Missile_Launcher,Equipment,"Fire a swarm of 12 missiles that deal 12x300% damage . ",Equipment,Default
-Eccentric_Vase,Equipment,"Create a quantum tunnel of up to 1000m in length. Lasts 30 seconds. ",Equipment,Default
-Foreign_Fruit,Equipment,"Instantly heal for 50% of your maximum health . ",Equipment,Default
-Fuel_Array,Equipment,"Looks like it could power something. EXTREMELY unstable... ",Equipment,Default
-Gnarled_Woodsprite,Equipment,"Gain a Woodsprite follower that heals for 1.5% of your maximum health/second . Can be sent to an ally to heal them for 10% of their maximum health . ",Equipment,One with the Woods
-Milky_Chrysalis,Equipment,"Sprout wings and fly for 15 seconds . Gain +20% movement speed for the duration. ",Equipment,Default
-Ocular_HUD,Equipment,"Gain +100% Critical Strike Chance for 8 seconds. ",Equipment,Default
-Preon_Accumulator,Equipment,"Fires preon tendrils, zapping enemies within 35m for up to 600% damage/second . On contact, detonate in an enormous 20m explosion for 4000% damage . ",Equipment,[REDACTED]
-Primordial_Cube,Equipment,"Fire a black hole that draws enemies within 30m into its center . Lasts 10 seconds ",Equipment,Default
-Radar_Scanner,Equipment,"Reveal all interactables within 500m for 10 seconds . ",Equipment,Bookworm
-Royal_Capacitor,Equipment,"Call down a lightning strike on a targeted monster, dealing 3000% damage and stunning nearby monsters. ",Equipment,Ascendant
-The_Back-up,Equipment,"Call 4 Strike Drones to fight for you. Lasts 25 seconds. ",Equipment,Mechanic
-The_Crowdfunder,Equipment,"Fires a continuous barrage that deals 100% damage per bullet . Costs $1 per bullet. Cost increases over time. ",Equipment,Funded!
-Volcanic_Egg,Equipment,"Turn into a draconic fireball for 5 seconds. Deal 500% damage on impact. Detonates at the end for 800% damage . ",Equipment,Default
-Effigy_of_Grief,Lunar Equipment,"ALL characters within are slowed by 50% and have their armor reduced by 20 . ",Lunar Equipment,Default
-Glowing_Meteorite,Lunar Equipment,"Rain meteors from the sky, damaging ALL characters for 600% damage per blast . Lasts 20 seconds. ",Lunar Equipment,Default
-Helfire_Tincture,Lunar Equipment,"Ignite ALL characters within 8m. Deal 5% of your maximum health/second as burning to yourself. The burn is 0.5x stronger on allies, and 24x stronger on enemies. ",Lunar Equipment,Default
-Spinel_Tonic,Lunar Equipment,"Drink the Tonic, gaining a boost for 15 seconds. Increases damage by +100% . Increases attack speed by +70% . Increases armor by +20 . Increases maximum health by +50% . Increases passive health regeneration by +300% . Increases movespeed by +30% . When the Tonic wears off, you have a 20% chance to gain a Tonic Affliction, reducing all of your stats by -5% (-5% per stack) . ",Lunar Equipment,Default
-Her_Biting_Embrace,Elite Equipment,"Become an aspect of ice. ",Elite Equipment,Default
-Ifrit's_Distinction,Elite Equipment,"Become an aspect of fire. ",Elite Equipment,Default
-N'kuhana's_Retort,Elite Equipment,"Become an aspect of corruption. ",Elite Equipment,Default
-Silence_Between_Two_Strikes,Elite Equipment,"Become an aspect of lightning. ",Elite Equipment,Default
-Spectral_Circlet,Elite Equipment,"Become an aspect of incorporeality. ",Elite Equipment,Default
+Blast Shower,Equipment,"Cleanse all negative effects. Includes debuffs, damage over time, and nearby projectiles. ",Equipment,Default
+Disposable Missile Launcher,Equipment,"Fire a swarm of 12 missiles that deal 12x300% damage . ",Equipment,Default
+Eccentric Vase,Equipment,"Create a quantum tunnel of up to 1000m in length. Lasts 30 seconds. ",Equipment,Default
+Foreign Fruit,Equipment,"Instantly heal for 50% of your maximum health . ",Equipment,Default
+Fuel Array,Equipment,"Looks like it could power something. EXTREMELY unstable... ",Equipment,Default
+Gnarled Woodsprite,Equipment,"Gain a Woodsprite follower that heals for 1.5% of your maximum health/second . Can be sent to an ally to heal them for 10% of their maximum health . ",Equipment,One with the Woods
+Milky Chrysalis,Equipment,"Sprout wings and fly for 15 seconds . Gain +20% movement speed for the duration. ",Equipment,Default
+Ocular HUD,Equipment,"Gain +100% Critical Strike Chance for 8 seconds. ",Equipment,Default
+Preon Accumulator,Equipment,"Fires preon tendrils, zapping enemies within 35m for up to 600% damage/second . On contact, detonate in an enormous 20m explosion for 4000% damage . ",Equipment,[REDACTED]
+Primordial Cube,Equipment,"Fire a black hole that draws enemies within 30m into its center . Lasts 10 seconds ",Equipment,Default
+Radar Scanner,Equipment,"Reveal all interactables within 500m for 10 seconds . ",Equipment,Bookworm
+Royal Capacitor,Equipment,"Call down a lightning strike on a targeted monster, dealing 3000% damage and stunning nearby monsters. ",Equipment,Ascendant
+The Back-up,Equipment,"Call 4 Strike Drones to fight for you. Lasts 25 seconds. ",Equipment,Mechanic
+The Crowdfunder,Equipment,"Fires a continuous barrage that deals 100% damage per bullet . Costs $1 per bullet. Cost increases over time. ",Equipment,Funded!
+Volcanic Egg,Equipment,"Turn into a draconic fireball for 5 seconds. Deal 500% damage on impact. Detonates at the end for 800% damage . ",Equipment,Default
+Effigy of Grief,Lunar Equipment,"ALL characters within are slowed by 50% and have their armor reduced by 20 . ",Lunar Equipment,Default
+Glowing Meteorite,Lunar Equipment,"Rain meteors from the sky, damaging ALL characters for 600% damage per blast . Lasts 20 seconds. ",Lunar Equipment,Default
+Helfire Tincture,Lunar Equipment,"Ignite ALL characters within 8m. Deal 5% of your maximum health/second as burning to yourself. The burn is 0.5x stronger on allies, and 24x stronger on enemies. ",Lunar Equipment,Default
+Spinel Tonic,Lunar Equipment,"Drink the Tonic, gaining a boost for 15 seconds. Increases damage by +100% . Increases attack speed by +70% . Increases armor by +20 . Increases maximum health by +50% . Increases passive health regeneration by +300% . Increases movespeed by +30% . When the Tonic wears off, you have a 20% chance to gain a Tonic Affliction, reducing all of your stats by -5% (-5% per stack) . ",Lunar Equipment,Default
+Her Biting Embrace,Elite Equipment,"Become an aspect of ice. ",Elite Equipment,Default
+Ifrit's Distinction,Elite Equipment,"Become an aspect of fire. ",Elite Equipment,Default
+N'kuhana's Retort,Elite Equipment,"Become an aspect of corruption. ",Elite Equipment,Default
+Silence Between Two Strikes,Elite Equipment,"Become an aspect of lightning. ",Elite Equipment,Default
+Spectral Circlet,Elite Equipment,"Become an aspect of incorporeality. ",Elite Equipment,Default

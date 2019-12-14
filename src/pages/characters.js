@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { navigate } from 'hookrouter'
 import MUIDataTable from "mui-datatables";
 
@@ -8,43 +8,63 @@ const options = {
   selectableRows: "none",
   download: false,
   print: false,
-  renderExpandableRow: (e) => handleClick(e),
-  expandableRows: true,
   rowHover: false
 }
 
 export default function CharTable() {
 
+  const [items, setItems] = React.useState([{}]);
+
+  useEffect(() => {
+
+    fetch('http://localhost:8000/api/survivors', {
+          method: 'GET',
+          headers: {
+          "Accept": "application/json",
+          'Content-Type': 'application/json'
+          }
+    })
+    .then(response => response.json())
+    .then(data => {
+      //console.log(data);
+      //const test = [];
+      setItems(data.results);
+      //console.log(items);
+    })
+    .catch(err => { console.log("fetch error" + err); });
+
+  }, []);
+
   return (
-    <MUIDataTable hover
-      title={"Characters"}
-      data={rows}
-      columns={columns}
-      options={options}
-    />
+    <div>
+      <MUIDataTable hover
+        title={"Items"}
+        data={items}
+        columns={columns}
+        options={options}
+      />
+    </div>
   );
 }
 
-function createData(name, primary, secondary, tactical, ult) {
-  return [name, primary, secondary, tactical, ult];
+function createData(item, rarity, description, unlocked_by, category) {
+  return [item, rarity, description, unlocked_by, category];
 }
 
-function handleClick(event) {
-  console.log("clicked" + event)
-  switch (event[0]) {
-    case 'Commando': navigate("/characters/commando", true)
-      break;
-    case 'Huntress': navigate("/characters/huntress", true)
-      break;
-    default: navigate("/characters", true)
-  }
-}
-
-const rows = [
-  createData("Commando", "Double Tap", "Phase Round", "Tactical Dive", "Suppressive Fire"),
-  createData("Huntress", "Strafe", "Laser Glaive", "Blink", "Arrow Rain"),
+const testData = [
+  {name: "Gabby George", title: "Business Analyst", location: "Minneapolis", age: 30, salary: "$100,000"}
 ];
+
 
 const columns = [
-  "Surivior", "Primary", "Secondary", "Tacticool", "Ultimate"
+  { label: "ID", name: "survivor_id" },
+  { label: "Name", name: "survivor_name" }, 
+  { label: "Health", name: "survivor_regen" }, 
+  { label: "Damage", name: "survivor_damage" }, 
+  { label: "Speed", name: "survivor_speed" },
+  { label: "Armor", name:"survivor_armor"}
 ];
+
+
+
+

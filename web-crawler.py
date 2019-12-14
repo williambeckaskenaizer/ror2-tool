@@ -74,7 +74,7 @@ def get_item_stats():
                 if ref_item_attr:
                     if attr == "desc":
                         for i in ref_item_attr.stripped_strings:
-                            i_desc+=i+" "
+                            i_desc+=i+""
                     if attr == "rarity":
                         for i in ref_item_attr.stripped_strings:
                             i_rarity=i
@@ -156,18 +156,18 @@ def get_chests():
     with open('chests.csv', mode='w') as chest_file:
         # "Chest Name","Item type, Common Chance, Uncommon Chance, Legendary Chance" ,"Base Cost"
         chest_file.write("Name, Item Type, Possible Rarity, White Chance, Green Chance, Red Chance, Base Cost\n")
-        chest_file.write("Barrel, Gold/XP, N/A, N/A, N/A, N/A, 0\n")
-        chest_file.write("Equipment Barrel, Equipment, N/A, N/A, N/A, N/A, 25\n")
-        chest_file.write("Cloaked Chest, \"Damage, Utility, Healing\", \"White, Green, Red\", 79.2, 19.8, 0.99, 0\n")
-        chest_file.write("Chest, \"Damage, Utility, Healing\", \"White, Green, Red\", 79.2, 19.8, 0.99, 25\n")
-        chest_file.write("Large Chest, \"Damage, Utility, Healing\", \"Green, Red\", 0, 80, 20, 50\n")
-        chest_file.write("Legendary Chest, \"Damage, Utility, Healing\", Red, 0, 0, 100, 3200\n")
-        chest_file.write("Damage Chest, Damage, \"White, Green, Red\", 79.2, 19.8, 0.99, 30\n")
-        chest_file.write("Utility Chest, Utility, \"White, Green, Red\",  79.2, 19.8, 0.99, 30\n")
-        chest_file.write("Healing Chest, Healing, \"White, Green, Red\", 79.2, 19.8, 0.99, 30\n")
-        chest_file.write("Lunar Pod, Lunar, Lunar, N/A, N/A, N/A, 1\n")
-        chest_file.write("Multishop Terminal, \"Damage, Utility, Healing\", \"White, Green\", Unknown, Unknown, Unkown, 30\n")
-        chest_file.write("Rusty Lockbox, \"Damage, Utility, Healing\", \"White, Green, Red\", Unknown, Unknown, Unkown, 0\n")
+        chest_file.write("Barrel,Gold/XP,N/A,0,0,0,0\n")
+        chest_file.write("Equipment Barrel,Equipment,N/A,0,0,0,25\n")
+        chest_file.write("Cloaked Chest,Damage/ Utility/ Healing,White/ Green/ Red,79.2,19.8,0.99,0\n")
+        chest_file.write("Chest,Damage/ Utility/ Healing,White/ Green/ Red,79.2,19.8,0.99,25\n")
+        chest_file.write("Large Chest,Damage/ Utility/ Healing,Green/ Red,0,80,20,50\n")
+        chest_file.write("Legendary Chest,Damage/ Utility/ Healing,Red,0,0,100,3200\n")
+        chest_file.write("Damage Chest,Damage,White/ Green/ Red,79.2,19.8,0.99,30\n")
+        chest_file.write("Utility Chest,Utility,White/ Green/ Red,79.2,19.8,0.99,30\n")
+        chest_file.write("Healing Chest,Healing,White/ Green/ Red,79.2,19.8,0.99,30\n")
+        chest_file.write("Lunar Pod,Lunar,Lunar,0,0,0,1\n")
+        chest_file.write("Multishop Terminal,Damage/ Utility/ Healing,White/ Green,0,0,0,30\n")
+        chest_file.write("Rusty Lockbox,Damage/ Utility/ Healing,White/ Green/ Red,0,0,0,0\n")
 
     print("Done.. teehee")
             
@@ -234,20 +234,21 @@ def get_challenges():
     attrs = ["name", "category", "unlock"]
 
     rarity_count = 0
-    for challenge in clean_challenge_page:
+    while rarity_count <=2:
         challenge_table = clean_challenge_page.select("table")[rarity_count]
-    with open('challenges.csv', mode='w') as challenge_file:
-        counter=0
-        for entry in challenge_table.stripped_strings:
-            challenge_list.append(entry)
+        with open('challenges.csv', mode='w') as challenge_file:
+            counter=0
+            for entry in challenge_table.stripped_strings:
+                challenge_list.append(entry)
 
-        for challenge in challenge_list:
-            if counter != 2:
-                challenge_file.write(challenge + ",")
-                counter+=1
-            else:
-                challenge_file.write(challenge + "\n")
-                counter = 0
+            for challenge in challenge_list:   
+                if counter != 2 and challenge != "Death Do Us Part" and challenge != "Lunar Omens":
+                    challenge_file.write(challenge + "/ ")
+                    counter+=1
+                else:
+                    challenge_file.write(challenge + "\n")
+                    counter = 0
+        rarity_count+=1
 
 def get_characters():
     #[name, primary, secondary, tactical, ult]
@@ -300,9 +301,9 @@ def get_characters():
 def main():
     # get_item_stats()
     # get_enemies()
-    #get_chests()
+    # get_chests()
     # get_bosses()
-    #get_environments()
+    # get_environments()
     get_challenges()
-    get_characters()
+    # get_characters()
 main()

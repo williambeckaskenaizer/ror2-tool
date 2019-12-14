@@ -5,22 +5,31 @@
   "dependencies": {
     "@material-ui/core": "^4.7.1",
     "@material-ui/icons": "^4.5.1",
+    "@types/mysql": "^2.15.8",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "hookrouter": "^1.2.3",
     "material-table": "^1.54.1",
     "material-ui-icons": "^1.0.0-beta.36",
     "material-ui-search-bar": "^0.4.2",
     "material-ui-table": "^0.1.2",
     "mui-datatables": "^2.13.2",
+    "mysql": "^2.17.1",
+    "nodemon": "^2.0.2",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "^3.3.0",
+    "typescript": "^3.7.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "server": "nodemon ./src/server/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

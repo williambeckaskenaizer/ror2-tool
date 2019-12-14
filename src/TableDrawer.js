@@ -108,7 +108,7 @@ function PermanentDrawerLeft() {
       break;
       case 'Structures' : navigate("/structures", true)
       break;
-      default : navigate("/", true)
+      default : navigate("/home", true)
       break;
     }
   }

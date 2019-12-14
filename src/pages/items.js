@@ -1,52 +1,70 @@
-import React from 'react';
-import { navigate } from 'hookrouter'
+import React, {useEffect} from 'react';
 import MUIDataTable from "mui-datatables";
 
+const options = {
+  filterType: "none",
+  responsive: "scrollMaxHeight",
+  selectableRows: "none",
+  download: false,
+  print: false,
+  rowHover: false
+}
 
+export default function CharTable() {
 
+  const [items, setItems] = React.useState([{}]);
 
-  const options = {
-    filterType: "none",
-    responsive: "scrollMaxHeight",
-    selectableRows: "none",
-    download: false,
-    print: false,
-    renderExpandableRow: (e) => handleClick(e),
-    rowHover: false
-  }
+  useEffect(() => {
 
-  export default function CharTable(){
+    fetch('http://localhost:8000/api/items', {
+          method: 'GET',
+          headers: {
+          "Accept": "application/json",
+          'Content-Type': 'application/json'
+          }
+    })
+    .then(response => response.json())
+    .then(data => {
+      //console.log(data);
+      //const test = [];
+      setItems(data.results);
+      //console.log(items);
+    })
+    .catch(err => { console.log("fetch error" + err); });
 
-    return (
+  }, []);
+
+  return (
+    <div>
       <MUIDataTable hover
         title={"Items"}
-        data={rows}
+        data={items}
         columns={columns}
         options={options}
       />
-    );
+    </div>
+  );
 }
 
-function createData(items, rarity, description, unlocked_by, category){
-    return [ items, rarity, description, unlocked_by, category ];
+function createData(item, rarity, description, unlocked_by, category) {
+  return [item, rarity, description, unlocked_by, category];
 }
 
-function handleClick(event){
-  console.log("clicked" + event)
-  switch(event[0]){
-    case 'Commando': navigate("/characters/commando", true)
-    break;
-    case 'Huntress': navigate("/characters/huntress", true)
-    break;
-    default: navigate("/characters",true)
-  }
-}
+const testData = [
+  {name: "Gabby George", title: "Business Analyst", location: "Minneapolis", age: 30, salary: "$100,000"}
+];
 
-const rows = [
-    createData("Soldier's Syringe", "Common", "Increases attack speed by 15%. (+15% per stack)", "Default", "Attack"),
-    createData("Tougher Times", "Common", "15% (+15% per stack) chance to block incoming damage. Unaffected by the luck", "Learning Process", "Defense"),
-  ];
 
 const columns = [
-  "Name","Rarity","Description","Unlocked By","Category"
+  { label: "ID", name: "item_id" },
+  { label: "Name", name: "item_name" }, 
+  { label: "Rarity", name: "item_rarity" }, 
+  { label: "Effect", name: "item_effect" }, 
+  { label: "Type", name: "item_type" },
+  { label: "Unlocked", name:"item_unlocked"}
 ];
+
+
+
+
+
